@@ -1,6 +1,6 @@
 using UnityEngine.SceneManagement;
 
-public enum SceneNames { Logo = 0, Login, Lobby, Scene_SH, }
+public enum SceneNames { Logo = 0, Login, Lobby, Scene_SH, SampleScene, }
 public static class Utils
 {
     // Start is called before the first frame update

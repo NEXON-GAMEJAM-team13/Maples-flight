@@ -9521,7 +9521,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1837514784}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -9534,8 +9534,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 137}
-  m_SizeDelta: {x: 935.5, y: 647.19995}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 935, y: 647}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1837514786
 MonoBehaviour:
@@ -9584,13 +9584,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1837514784}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88df9b40a0cf34c4cae856d8b86ca755, type: 3}
+  m_Script: {fileID: 11500000, guid: baae18eb68b5311498624a908b6a33f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   textMessage: {fileID: 926917023}
   imageID: {fileID: 809695919}
   inputFieldID: {fileID: 809695918}
   btnRegister: {fileID: 75613473}
+  GameCanvas: {fileID: 777409399}
+  LoginCanvas: {fileID: 1350358279}
 --- !u!1 &1871260006
 GameObject:
   m_ObjectHideFlags: 0
@@ -11199,14 +11201,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fca380f377e44a4ca3c4f898f75bd46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMessage: {fileID: 2038950557}
-  imageID: {fileID: 2038950562}
-  inputFieldID: {fileID: 2038950561}
-  imagePW: {fileID: 2038950560}
-  inputFieldPW: {fileID: 2038950559}
-  imageNICK: {fileID: 49054777}
-  inputFieldNICK: {fileID: 49054776}
-  btnRegister: {fileID: 2038950558}
 --- !u!114 &2038950565
 MonoBehaviour:
   m_ObjectHideFlags: 0
