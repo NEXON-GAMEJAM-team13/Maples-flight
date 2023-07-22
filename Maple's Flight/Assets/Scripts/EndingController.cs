@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EndingController : MonoBehaviour
 {
+    [SerializeField]
+    Sprite[] thumbnails = new Sprite[11];
     string[] titles = new string[11];
     string[] desc = new string[11];
 
@@ -32,5 +35,20 @@ public class EndingController : MonoBehaviour
         desc[8] = "이렇게 조금씩 멀리 나아가는거죠! 어때요? 전보다 더 성장한거 같지 않나요?";
         desc[9] = "나름 어엿한 단풍나무 같죠? 이 정도면 저도 이제 다 컸다고요!";
         desc[10] = "엄마처럼 크고 아름다운 단풍나무가 됐어요! 이제 이 곳에서 평화롭던 예전 우리 마을의 모습을 되찾을 거예요. 지켜봐주세요 엄마!";
+    }
+
+    public string GetEndingTitleText(int idx)
+    {
+        return titles[idx];
+    }
+
+    public string GetEndingDescText(int idx)
+    {
+        return desc[idx];
+    }
+
+    public Sprite GetEndingImage(int idx)
+    {
+        return thumbnails[idx];
     }
 }
