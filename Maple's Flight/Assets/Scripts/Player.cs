@@ -59,9 +59,11 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
-            Debug.Log("��ֹ� �浹~");
+            Debug.Log("부딫힘~");
             GameOver();
         }
+        else
+            Debug.Log("뭐에 부딫힘?");
     }
 
 
