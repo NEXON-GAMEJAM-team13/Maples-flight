@@ -46,6 +46,9 @@ public class Obstacles : MonoBehaviour
 
     public void GameStart()
     {
+        for (int i = 0; i < 3; i++)
+            gameOverPanel.transform.parent.GetChild(i).gameObject.SetActive(true);
+
         GameManager.instance.isPlaying = true;
         stageTime = 0;
         nextTime = 0;
@@ -73,6 +76,9 @@ public class Obstacles : MonoBehaviour
         obsParent.gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
 
+        for (int i=0; i<3; i++)
+            gameOverPanel.transform.parent.GetChild(i).gameObject.SetActive(false);
+
         int score = (int)(stageTime / 10);
         GameManager.instance.SetRank(score);
         nowScore_txt.text = score.ToString();
@@ -88,7 +94,7 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(0, 1);//obstaclePref.Length
+            int obsIdx = Random.Range(0, obstaclePref.Length); //
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
