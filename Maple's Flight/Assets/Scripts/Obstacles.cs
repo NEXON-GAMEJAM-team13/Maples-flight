@@ -18,7 +18,7 @@ public class Obstacles : MonoBehaviour
     [SerializeField]
     float stageTime;  // 현재 시간
     [SerializeField]
-    float obsCycle = 5f; // 다음 장애물 생성 주기
+    float obsCycle; // 다음 장애물 생성 주기
     [SerializeField]
     float nextTime; // 다음 장애물 등장 시간
     //[SerializeField]
@@ -82,9 +82,7 @@ public class Obstacles : MonoBehaviour
             obstacles[idx] = Instantiate(obstacle[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = Vector3.one;
-            // 스테이지 별로 다른 난이도
-            //if (GameManager.instance.CurrentStage == 1)
-            obstacles[idx].transform.localPosition = new Vector3(840f, Random.Range(-600f, -400f), 0f);
+            obstacles[idx].transform.localPosition = new Vector3(840f, -250f, 0f);
             
             if (++idx == 5) idx = 0;
         }
@@ -94,7 +92,7 @@ public class Obstacles : MonoBehaviour
             if (obstacles[i])
             {
                 obstacles[i].transform.Translate(-0.3f * speed * Time.deltaTime, 0, 0);
-                if (obstacles[i].transform.localPosition.x < -700f)
+                if (obstacles[i].transform.localPosition.x < -2400f)
                 {
                     Destroy(obstacles[i]);
                 }
