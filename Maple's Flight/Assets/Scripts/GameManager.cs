@@ -2,11 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using BackEnd;
+
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
     DailyRankRegister DailyRankRegister;
-    public bool isPlaying = false; // °ÔÀÓÇÏ´Â ÁßÀÎÁö
+    public bool isPlaying = false; // ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     public static GameManager instance = null;
 
@@ -20,8 +23,9 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetScore(int score) // Á¡¼ö ·©Å·À¸·Î ³Ñ±â±â
+    public void SetScore(int score) // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å·ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ±ï¿½ï¿½
     {
         DailyRankRegister.Process(score);
+
     }
 }

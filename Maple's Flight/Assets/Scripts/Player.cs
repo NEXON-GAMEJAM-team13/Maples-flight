@@ -5,28 +5,29 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rigid2D;
+
+
     [SerializeField]
     float resetSpeed = 0.5f;
     [SerializeField]
     Obstacles Obstacles;
-    
+
     void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
     }
 
-    void OnEnable() // ½ºÅ©¸³Æ® È°¼ºÈ­µÉ ¶§¸¶´Ù ½ÇÇà
+    void OnEnable() // ï¿½ï¿½Å©ï¿½ï¿½Æ® È°ï¿½ï¿½È­ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     {
-        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z); // À§Ä¡ ÃÊ±âÈ­
+        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z); // ï¿½ï¿½Ä¡ ï¿½Ê±ï¿½È­
         rigid2D.AddForce(Vector3.right * 50);
+
     }
 
     void Update()
     {
-        if (transform.localPosition.x > - 330f)
-        {
-            transform.Translate(Vector3.right * resetSpeed * -1 * Time.deltaTime);
-        }
+
+
 
         if (transform.localPosition.y < -1240f)
         {
@@ -39,6 +40,7 @@ public class Player : MonoBehaviour
         GameManager.instance.isPlaying = false;
         Obstacles.GameOver();
         gameObject.SetActive(false);
+
     }
 
     public void UpBtn()
@@ -57,8 +59,13 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
-            Debug.Log("Àå¾Ö¹° Ãæµ¹~");
+            Debug.Log("ï¿½ï¿½Ö¹ï¿½ ï¿½æµ¹~");
             GameOver();
         }
     }
+
+
+
+
+
 }

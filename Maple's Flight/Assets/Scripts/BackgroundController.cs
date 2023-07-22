@@ -19,7 +19,7 @@ public class BackgroundController : MonoBehaviour
     [SerializeField]
     Transform[] ground;
     [SerializeField]
-    float groundSpeed; // ¹Ù´ÚÀº Àå¾Ö¹° ¼Óµµ·Î..
+    float groundSpeed; // ï¿½Ù´ï¿½ï¿½ï¿½ ï¿½ï¿½Ö¹ï¿½ ï¿½Óµï¿½ï¿½ï¿½..
 
     void Update()
     {
