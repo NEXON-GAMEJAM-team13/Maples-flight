@@ -21,8 +21,6 @@ public class Obstacles : MonoBehaviour
     float obsCycle; // 다음 장애물 생성 주기
     [SerializeField]
     float nextTime; // 다음 장애물 등장 시간
-    //[SerializeField]
-    //float desTime;    //목표 시간
 
     [SerializeField]
     GameObject[] obstacle;
@@ -62,12 +60,13 @@ public class Obstacles : MonoBehaviour
             Destroy(obsParent.GetChild(i).gameObject);
         }
         obsParent.gameObject.SetActive(false);
-
-        GameManager.instance.SetScore((int)(stageTime / 10));
         gameOverPanel.SetActive(true);
-        
-        nowScore_txt.text = ((int)(stageTime / 10)).ToString();
-        bestScore_txt.text = ((int)(stageTime / 10)).ToString();
+
+        int score = (int)(stageTime / 10);
+        GameManager.instance.SetRank(score);
+        nowScore_txt.text = score.ToString();
+        GameManager.instance.SetNowScore(score);
+        bestScore_txt.text = GameManager.instance.SetBestScore(score).ToString();
     }
 
     void MakeObstacles()

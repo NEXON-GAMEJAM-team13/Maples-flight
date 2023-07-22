@@ -23,9 +23,20 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void SetScore(int score) // ���� ��ŷ���� �ѱ��
+    public void SetRank(int score)
     {
         DailyRankRegister.Process(score);
+    }
 
+    public void SetNowScore(int score)
+    {
+        DailyRankRegister.GameData.nowScore = score;
+    }
+
+    public int SetBestScore(int score)
+    {
+        if (score > DailyRankRegister.GameData.bestScore)
+            DailyRankRegister.GameData.bestScore = score;
+        return DailyRankRegister.GameData.bestScore;
     }
 }
