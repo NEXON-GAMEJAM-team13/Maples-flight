@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PauseController : MonoBehaviour
 {
-    public GameObject PauseUI;
-    public AudioSource click;
+    //public GameObject PauseUI;
+    //public AudioSource click;
 
     private bool paused = false;
 
@@ -28,19 +28,17 @@ public class PauseController : MonoBehaviour
 
     void Start()
     {
-        PauseUI.SetActive(false);
+        //PauseUI.SetActive(false);
     }
 
     void Update()
     {
         if (paused)
         {
-            PauseUI.SetActive(true);
             Time.timeScale = 0;
         }
-        if (!paused)
+        else
         {
-            PauseUI.SetActive(false);
             Time.timeScale = 1;
         }
     }
