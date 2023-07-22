@@ -6,15 +6,17 @@ using TMPro;
 
 public class Obstacles : MonoBehaviour
 {
+    [Header("=점수=")]
     [SerializeField]
     TextMeshProUGUI time_txt;
-    [SerializeField]
-    GameObject gameOverPanel;
     [SerializeField]
     TextMeshProUGUI nowScore_txt;
     [SerializeField]
     TextMeshProUGUI bestScore_txt;
+    [SerializeField]
+    GameObject gameOverPanel;
 
+    [Header("=시간=")]
     [SerializeField]
     float stageTime;  // 현재 시간
     [SerializeField]
@@ -22,6 +24,15 @@ public class Obstacles : MonoBehaviour
     [SerializeField]
     float nextTime; // 다음 장애물 등장 시간
 
+    [Header("=동물 친구들=")]
+    [SerializeField]
+    GameObject[] animalPref;
+    [SerializeField]
+    GameObject animals;
+    [SerializeField]
+    Transform aniParent;
+
+    [Header("=상하단 장애물=")]
     [SerializeField]
     GameObject[] obstaclePref;
     [SerializeField]
@@ -77,12 +88,23 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(0, obstaclePref.Length);
+            int obsIdx = Random.Range(0, 1);//obstaclePref.Length
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
             obstacles[idx].transform.localPosition = new Vector3(840f, GetYPos(obsIdx), 0f);
             
+            if (obsIdx == 0 && !animals) // 0번 장애물일 때 가끔 토끼 등장
+            {
+                //int upIdx = Random.Range(0, animalPref.Length);
+                //animalPref[upIdx]
+                animals = Instantiate(animalPref[0], Vector3.zero, Quaternion.identity);
+                animals.transform.SetParent(aniParent);
+                animals.transform.localScale = new Vector3(100f, 100f, 0f);
+                animals.transform.localPosition = new Vector3(840-19, 53, -1f);
+            }
+            
+
             if (++idx == 5) idx = 0;
         }
 
@@ -97,6 +119,16 @@ public class Obstacles : MonoBehaviour
                 }
             }
         }
+
+        if (animals)
+        {
+            animals.transform.Translate(-0.3f * speed * Time.deltaTime, 0, 0);
+            if (animals.transform.localPosition.x < -2000f)
+            {
+                Destroy(animals);
+            }
+        }
+        
     }
 
     int GetYPos(int obsIdx)
