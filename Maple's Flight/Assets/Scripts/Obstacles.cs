@@ -16,11 +16,13 @@ public class Obstacles : MonoBehaviour
     TextMeshProUGUI bestScore_txt;
 
     [SerializeField]
-    float stageTime;  //현재 경과 시간
+    float stageTime;  // 현재 시간
     [SerializeField]
-    float desTime;    //목표시간
+    float obsCycle = 5f; // 다음 장애물 생성 주기
     [SerializeField]
-    float nextTime;
+    float nextTime; // 다음 장애물 등장 시간
+    //[SerializeField]
+    //float desTime;    //목표 시간
 
     [SerializeField]
     GameObject[] obstacle;
@@ -37,6 +39,7 @@ public class Obstacles : MonoBehaviour
     {
         GameManager.instance.isGameOver = false;
         stageTime = 0;
+        nextTime = 0;
         StartCoroutine("Timer");
     }
 
@@ -74,7 +77,7 @@ public class Obstacles : MonoBehaviour
 
         if (stageTime > nextTime)
         {
-            nextTime = stageTime + 5f;
+            nextTime = stageTime + obsCycle;
             int obsIdx = Random.Range(0, obstacle.Length);
             obstacles[idx] = Instantiate(obstacle[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
@@ -86,7 +89,7 @@ public class Obstacles : MonoBehaviour
             if (++idx == 5) idx = 0;
         }
 
-        for (int i=0; i<5; i++)
+        for (int i = 0; i < 5; i++)
         {
             if (obstacles[i])
             {

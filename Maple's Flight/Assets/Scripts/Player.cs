@@ -30,10 +30,15 @@ public class Player : MonoBehaviour
 
         if (transform.localPosition.y < -1240f)
         {
-            GameManager.instance.isGameOver = true;
-            Obstacles.GameOver();
-            gameObject.SetActive(false);
+            GameOver();
         }
+    }
+
+    void GameOver()
+    {
+        GameManager.instance.isGameOver = true;
+        Obstacles.GameOver();
+        gameObject.SetActive(false);
     }
 
     public void UpBtn()
@@ -46,5 +51,22 @@ public class Player : MonoBehaviour
     {
         rigid2D.velocity = Vector3.zero;
         rigid2D.AddForce(Vector3.right * 80);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle"))
+        {
+            Debug.Log("장애물 충돌~");
+            GameOver();
+        }
+    }
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.collider.CompareTag("Obstacle"))
+        {
+            Debug.Log("장애물 충돌~");
+            GameOver();
+        }
     }
 }
