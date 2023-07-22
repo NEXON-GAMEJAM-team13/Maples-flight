@@ -1,0 +1,140 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3680547638638007168
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4955596256895367130}
+  - component: {fileID: 165476428841834485}
+  - component: {fileID: 430827160898208327}
+  - component: {fileID: 8170735536469690248}
+  m_Layer: 5
+  m_Name: stone_3
+  m_TagString: Obstacle
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4955596256895367130
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680547638638007168}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 142, y: -698}
+  m_SizeDelta: {x: 615, y: 442}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &165476428841834485
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680547638638007168}
+  m_CullTransparentMesh: 1
+--- !u!114 &430827160898208327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680547638638007168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: f3965dc2d61726442b4a460c0d060a55, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!68 &8170735536469690248
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3680547638638007168}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -250.4, y: 0}
+  - {x: -252.5489, y: -6.6539755}
+  - {x: -274.71133, y: -16.830063}
+  - {x: -282.26346, y: -25.682983}
+  - {x: -301.0521, y: -58.177}
+  - {x: -302.9071, y: -81.881546}
+  - {x: -294.55743, y: -123.52151}
+  - {x: -267.91357, y: -129.6005}
+  - {x: -235.59213, y: -147.92276}
+  - {x: -211.55219, y: -136.16391}
+  - {x: -151.41931, y: -164.62021}
+  - {x: -106.28756, y: -165.06557}
+  - {x: -68.06849, y: -187.53577}
+  - {x: -8.766985, y: -193.15005}
+  - {x: 35.658764, y: -189.06096}
+  - {x: 87.22135, y: -209.06094}
+  - {x: 104.49906, y: -216.44467}
+  - {x: 172.69147, y: -194.87274}
+  - {x: 209.20361, y: -158.82927}
+  - {x: 212.92851, y: -142.68733}
+  - {x: 260.87048, y: -109.15442}
+  - {x: 274.8467, y: -94.0405}
+  - {x: 276.86395, y: -79.99774}
+  - {x: 297.2904, y: -57.310673}
+  - {x: 294.9749, y: -17.096077}
+  - {x: 289.43457, y: -1.7033186}
+  - {x: 279.4427, y: 54.44964}
+  - {x: 251.17734, y: 118.73036}
+  - {x: 230.33904, y: 146.43234}
+  - {x: 195.78836, y: 171.01242}
+  - {x: 162.57292, y: 199.3248}
+  - {x: 125.77183, y: 206.75616}
+  - {x: 92.55206, y: 218.44391}
+  - {x: -12.209442, y: 206.17708}
+  - {x: -78.35072, y: 193.52547}
+  - {x: -116.56745, y: 179.83673}
+  - {x: -186.74263, y: 131.87457}
+  - {x: -225.94078, y: 63.7891}
+  - {x: -231.60794, y: 46.464237}
+  - {x: -243.12584, y: 33.363785}
+  - {x: -247.14143, y: 15.870459}
+  - {x: -250.63, y: 0}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
