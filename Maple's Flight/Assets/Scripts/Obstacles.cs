@@ -73,6 +73,9 @@ public class Obstacles : MonoBehaviour
         {
             Destroy(obsParent.GetChild(i).gameObject);
         }
+        if (animals)
+            Destroy(animals.gameObject);
+
         obsParent.gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
 
