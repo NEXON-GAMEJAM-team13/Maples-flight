@@ -36,6 +36,7 @@ public class Obstacles : MonoBehaviour
     public void GameStart()
     {
         GameManager.instance.isGameOver = false;
+        stageTime = 0;
         StartCoroutine("Timer");
     }
 
@@ -51,11 +52,17 @@ public class Obstacles : MonoBehaviour
     public void GameOver()
     {
         StopAllCoroutines();
+        Debug.Log("게임오버~");
+
+        for (int i = 0; i < obsParent.childCount; i++)
+        {
+            Destroy(obsParent.GetChild(i).gameObject);
+        }
+        obsParent.gameObject.SetActive(false);
+
         GameManager.instance.SetScore((int)(stageTime / 10));
         gameOverPanel.SetActive(true);
-        Debug.Log("게임오버~");
-        gameObject.SetActive(false);
-
+        
         nowScore_txt.text = ((int)(stageTime / 10)).ToString();
         bestScore_txt.text = ((int)(stageTime / 10)).ToString();
     }

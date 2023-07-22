@@ -10,9 +10,14 @@ public class Player : MonoBehaviour
     [SerializeField]
     Obstacles Obstacles;
     
-    void Start()
+    void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
+    }
+
+    void OnEnable() // 스크립트 활성화될 때마다 실행
+    {
+        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z); // 위치 초기화
         rigid2D.AddForce(Vector3.right * 50);
     }
 
@@ -22,11 +27,6 @@ public class Player : MonoBehaviour
         {
             transform.Translate(Vector3.right * resetSpeed * -1 * Time.deltaTime);
         }
-        //터치
-        //if ((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
-        //{
-
-        //}
 
         if (transform.localPosition.y < -1240f)
         {
