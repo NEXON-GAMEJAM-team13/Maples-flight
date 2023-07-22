@@ -17,9 +17,13 @@ public class BackgroundController : MonoBehaviour
     [SerializeField]
     float mountainSpeed;
     [SerializeField]
+    Transform[] tree;
+    [SerializeField]
+    float treeSpeed;
+    [SerializeField]
     Transform[] ground;
     [SerializeField]
-    float groundSpeed; // �ٴ��� ��ֹ� �ӵ���..
+    float groundSpeed;
 
     void Update()
     {
@@ -36,6 +40,7 @@ public class BackgroundController : MonoBehaviour
             sky[i].Translate(Vector3.right * skySpeed * Time.deltaTime * -1);
             cloud[i].Translate(Vector3.right * cloudSpeed * Time.deltaTime * -1);
             mountain[i].Translate(Vector3.right * mountainSpeed * Time.deltaTime * -1);
+            tree[i].Translate(Vector3.right * treeSpeed * Time.deltaTime * -1);
             ground[i].Translate(Vector3.right * groundSpeed * Time.deltaTime * -1);
 
             if (sky[i].localPosition.x < -1600)
@@ -44,6 +49,8 @@ public class BackgroundController : MonoBehaviour
                 cloud[i].localPosition = new Vector3(cloud[i].localPosition.x + 4000, cloud[i].localPosition.y, cloud[i].localPosition.z);
             if (mountain[i].localPosition.x < -1600)
                 mountain[i].localPosition = new Vector3(mountain[i].localPosition.x + 4000, mountain[i].localPosition.y, mountain[i].localPosition.z);
+            if (tree[i].localPosition.x < -1600)
+                tree[i].localPosition = new Vector3(tree[i].localPosition.x + 4000, tree[i].localPosition.y, tree[i].localPosition.z);
             if (ground[i].localPosition.x < -1600)
                 ground[i].localPosition = new Vector3(ground[i].localPosition.x + 4000, ground[i].localPosition.y, ground[i].localPosition.z);
         }
