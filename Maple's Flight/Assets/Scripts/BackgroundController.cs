@@ -17,7 +17,7 @@ public class BackgroundController : MonoBehaviour
     [SerializeField]
     float mountainSpeed;
     //[SerializeField]
-    //GameObject ground; // ¹Ù´ÚÀº Àå¾Ö¹° ¼Óµµ·Î => Obstacles¿¡¼­ °ü¸®
+    //GameObject ground; // ï¿½Ù´ï¿½ï¿½ï¿½ ï¿½ï¿½Ö¹ï¿½ ï¿½Óµï¿½ï¿½ï¿½ => Obstaclesï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     void Update()
     {

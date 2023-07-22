@@ -8,7 +8,7 @@ public class GameController : MonoBehaviour
         if (IsGameOver == true) return;
 
         IsGameOver = true;
-        BackendGameData.Instance.UserGameData.timeCount += 1;
+
 
 
         BackendGameData.Instance.GameDataUpdate(AfterGameOver);

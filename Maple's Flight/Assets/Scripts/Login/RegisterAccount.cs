@@ -55,7 +55,7 @@ public class RegisterAccount : LoginBase
             }
             else
             {
-
+                Debug.LogError($"LogIn Failed : {callback}");
             }
         });
     }

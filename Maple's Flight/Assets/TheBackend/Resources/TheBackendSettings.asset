@@ -12,15 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 660911240, guid: f624596d5fe1bd5459a5da424a8abc1b, type: 3}
   m_Name: TheBackendSettings
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  clientAppID: 2f130860-27e3-11ee-b8bf-89be82da81b15247
-  signatureKey: 2f132f70-27e3-11ee-b8bf-89be82da81b15247
-=======
   clientAppID: 04e7c2d0-27dc-11ee-8fa5-41889c1cf4ea5246
   signatureKey: 04e7c2d1-27dc-11ee-8fa5-41889c1cf4ea5246
->>>>>>> 80c33cd5c60ba2ece85d7a785369b113bc4cde33
   functionAuthKey: 
-  packageName: com.DefaultCompany.MaplesFlight
+  packageName: com.GirlsGeneration.MaplesFlight
   isAllPlatform: 1
   sendLogReport: 1
   rateCountActive: 0

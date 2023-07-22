@@ -15,5 +15,5 @@ public class GameData
         bestScore = 0;
     }
 
-    
+
 }
