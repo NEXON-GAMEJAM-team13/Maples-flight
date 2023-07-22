@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     DailyRankRegister DailyRankRegister;
-    public bool isGameOver = true;
+    public bool isPlaying = false; // 게임하는 중인지
 
     public static GameManager instance = null;
+
     private void Awake()
     {
         if (instance == null)
@@ -19,21 +20,8 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    //private GameData gameData = new GameData();
-    //public GameData GameData => gameData;
-
-    public void SetScore(int score)
+    public void SetScore(int score) // 점수 랭킹으로 넘기기
     {
-        //GameData.nowScore = score;
-        //if (score > GameData.bestScore)
-        //    GameData.bestScore = score;
         DailyRankRegister.Process(score);
     }
-    /*
-    public void PlusScore()
-    {
-        GameData.nowScore += 10;
-        GameData.bestScore += 10;
-        BackendGameData.Instance.GameDataUpdate();
-    }*/
 }

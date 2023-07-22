@@ -37,7 +37,7 @@ public class Obstacles : MonoBehaviour
 
     public void GameStart()
     {
-        GameManager.instance.isGameOver = false;
+        GameManager.instance.isPlaying = true;
         stageTime = 0;
         nextTime = 0;
         StartCoroutine("Timer");
@@ -45,7 +45,7 @@ public class Obstacles : MonoBehaviour
 
     void Update()
     {
-        if (!GameManager.instance.isGameOver)
+        if (GameManager.instance.isPlaying)
         {
             time_txt.text = ((int)(stageTime / 10)).ToString();
             MakeObstacles();
@@ -100,7 +100,6 @@ public class Obstacles : MonoBehaviour
                 }
             }
         }
-        
     }
 
     IEnumerator Timer()

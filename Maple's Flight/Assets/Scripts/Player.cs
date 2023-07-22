@@ -36,7 +36,7 @@ public class Player : MonoBehaviour
 
     void GameOver()
     {
-        GameManager.instance.isGameOver = true;
+        GameManager.instance.isPlaying = false;
         Obstacles.GameOver();
         gameObject.SetActive(false);
     }
@@ -56,14 +56,6 @@ public class Player : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Obstacle"))
-        {
-            Debug.Log("장애물 충돌~");
-            GameOver();
-        }
-    }
-    private void OnCollisionEnter(Collision col)
-    {
-        if (col.collider.CompareTag("Obstacle"))
         {
             Debug.Log("장애물 충돌~");
             GameOver();
