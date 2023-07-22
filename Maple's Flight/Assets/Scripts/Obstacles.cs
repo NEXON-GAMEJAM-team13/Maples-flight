@@ -80,8 +80,8 @@ public class Obstacles : MonoBehaviour
             int obsIdx = Random.Range(0, obstaclePref.Length);
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
-            obstacles[idx].transform.localScale = new Vector3(0.7f, 0.7f, 0f);
-            obstacles[idx].transform.localPosition = new Vector3(840f, -400f, 0f);
+            obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
+            obstacles[idx].transform.localPosition = new Vector3(840f, GetYPos(obsIdx), 0f);
             
             if (++idx == 5) idx = 0;
         }
@@ -96,6 +96,35 @@ public class Obstacles : MonoBehaviour
                     Destroy(obstacles[i]);
                 }
             }
+        }
+    }
+
+    int GetYPos(int obsIdx)
+    {
+        int diff = 10;
+        switch (obsIdx)
+        {
+            // 나무
+            case 0:
+                return -371 + diff;
+            case 1:
+                return -461 + diff;
+            case 2:
+                return -301 + diff;
+            // 돌
+            case 3:
+                return -410 + diff;
+            case 4:
+                return -471 + diff;
+            case 5:
+                return -558 + diff;
+            // 나뭇가지
+            case 6:
+                return 1249 - diff * 2;
+            case 7:
+                return 1128 - diff * 4;
+            default:
+                return 0;
         }
     }
 
