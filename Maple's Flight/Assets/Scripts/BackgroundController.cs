@@ -16,8 +16,10 @@ public class BackgroundController : MonoBehaviour
     Transform[] mountain;
     [SerializeField]
     float mountainSpeed;
-    //[SerializeField]
-    //GameObject ground; // 바닥은 장애물 속도로 => Obstacles에서 관리
+    [SerializeField]
+    Transform[] ground;
+    [SerializeField]
+    float groundSpeed; // 바닥은 장애물 속도로..
 
     void Update()
     {
@@ -34,6 +36,7 @@ public class BackgroundController : MonoBehaviour
             sky[i].Translate(Vector3.right * skySpeed * Time.deltaTime * -1);
             cloud[i].Translate(Vector3.right * cloudSpeed * Time.deltaTime * -1);
             mountain[i].Translate(Vector3.right * mountainSpeed * Time.deltaTime * -1);
+            ground[i].Translate(Vector3.right * groundSpeed * Time.deltaTime * -1);
 
             if (sky[i].localPosition.x < -1600)
                 sky[i].localPosition = new Vector3(sky[i].localPosition.x + 4000, sky[i].localPosition.y, sky[i].localPosition.z);
@@ -41,8 +44,10 @@ public class BackgroundController : MonoBehaviour
                 cloud[i].localPosition = new Vector3(cloud[i].localPosition.x + 4000, cloud[i].localPosition.y, cloud[i].localPosition.z);
             if (mountain[i].localPosition.x < -1600)
                 mountain[i].localPosition = new Vector3(mountain[i].localPosition.x + 4000, mountain[i].localPosition.y, mountain[i].localPosition.z);
+            if (ground[i].localPosition.x < -1600)
+                ground[i].localPosition = new Vector3(ground[i].localPosition.x + 4000, ground[i].localPosition.y, ground[i].localPosition.z);
         }
 
-        
+
     }
 }
