@@ -1,25 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 using BackEnd;
+
 
 public class GameManager : MonoBehaviour
 {
-    public int score;
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    DailyRankRegister DailyRankRegister;
+    public bool isPlaying = false; // �����ϴ� ������
+
+    public static GameManager instance = null;
+
+    private void Awake()
     {
-        score = 0;
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+            Destroy(gameObject);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetScore(int score) // ���� ��ŷ���� �ѱ��
     {
+        DailyRankRegister.Process(score);
 
-    }
-
-    public void upScore()
-    {
-        score += 1;
     }
 }

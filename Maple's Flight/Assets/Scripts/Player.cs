@@ -5,51 +5,63 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rigid2D;
-    public float speed;
-    private float defaultSpeed;
 
-    Vector3 newVec;
-    void Start()
+
+    [SerializeField]
+    float resetSpeed = 0.5f;
+    [SerializeField]
+    Obstacles Obstacles;
+
+    void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
-        // rigid2D.AddForce(Vector3.up * 270);
-        defaultSpeed = 5f;
+    }
 
-        speed = defaultSpeed;
+    void OnEnable() // ��ũ��Ʈ Ȱ��ȭ�� ������ ����
+    {
+        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z); // ��ġ �ʱ�ȭ
+        rigid2D.AddForce(Vector3.right * 50);
+
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.A))
+
+
+
+        if (transform.localPosition.y < -1240f)
         {
-            BackendGameData.Instance.UserGameData.timeCount += 1;
-            Debug.Log("1점 상승");
-
+            GameOver();
         }
-        // if (speed > defaultSpeed)
-        // {
-        //     speed -= 1f * Time.deltaTime;
-        // }
-        // newVec = transform.position;
-        // newVec.x += speed * Time.deltaTime;
-        // transform.position = newVec;
-        //��ġ
-        //if ((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
-        //{
+    }
 
-        //}
+    void GameOver()
+    {
+        GameManager.instance.isPlaying = false;
+        Obstacles.GameOver();
+        gameObject.SetActive(false);
+
     }
 
     public void UpBtn()
     {
         rigid2D.velocity = Vector3.zero;
-        rigid2D.AddForce(Vector3.up * 270);
+        rigid2D.AddForce(Vector3.up * 200);
     }
 
     public void FastBtn()
     {
         rigid2D.velocity = Vector3.zero;
-        rigid2D.AddForce(Vector3.right * 100);
+        rigid2D.AddForce(Vector3.right * 80);
+    }
+
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Obstacle"))
+        {
+            Debug.Log("��ֹ� �浹~");
+            GameOver();
+        }
     }
 
 
