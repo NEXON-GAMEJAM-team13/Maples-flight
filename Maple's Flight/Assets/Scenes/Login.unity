@@ -7769,7 +7769,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!95 &1231735765
 Animator:
   serializedVersion: 3
@@ -11194,6 +11194,8 @@ MonoBehaviour:
   nextTime: 0
   animalPref:
   - {fileID: 7760378054094049723, guid: 1a7abaef457b39849bc4e9e0c47e9dd9, type: 3}
+  - {fileID: 4950785927266540356, guid: 73dacb512da80034b9eb61d611552202, type: 3}
+  - {fileID: 4451179866681889566, guid: 2ed65ee6832082142a25085730faf08e, type: 3}
   animals: {fileID: 0}
   aniParent: {fileID: 1723016234}
   obstaclePref:
