@@ -23,7 +23,7 @@ public class Obstacles : MonoBehaviour
     float nextTime; // 다음 장애물 등장 시간
 
     [SerializeField]
-    GameObject[] obstacle;
+    GameObject[] obstaclePref;
     [SerializeField]
     GameObject[] obstacles = new GameObject[5];
     [SerializeField]
@@ -77,11 +77,11 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(0, obstacle.Length);
-            obstacles[idx] = Instantiate(obstacle[obsIdx], Vector3.zero, Quaternion.identity);
+            int obsIdx = Random.Range(0, obstaclePref.Length);
+            obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
-            obstacles[idx].transform.localScale = Vector3.one;
-            obstacles[idx].transform.localPosition = new Vector3(840f, -250f, 0f);
+            obstacles[idx].transform.localScale = new Vector3(0.7f, 0.7f, 0f);
+            obstacles[idx].transform.localPosition = new Vector3(840f, -400f, 0f);
             
             if (++idx == 5) idx = 0;
         }
