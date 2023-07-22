@@ -17,9 +17,8 @@ public class RegisterProfile : LoginBase
     private Button btnRegister;
 
     [SerializeField]
-    private GameObject GameCanvas;
-    [SerializeField]
-    private GameObject LoginCanvas;
+    private GameObject Main;
+
     public void onClickRegisterAccount()
     {
         ResetUI(imageID);
@@ -47,10 +46,9 @@ public class RegisterProfile : LoginBase
             {
                 SetMessage($"계정생성 성공.{inputFieldID.text}님 환영합니다.");
                 BackendGameData.Instance.GameDataInsert();
-                //Utils.LoadScene(SceneNames.SampleScene);
-                LoginCanvas.SetActive(false);
-                GameCanvas.SetActive(true);
 
+                gameObject.SetActive(false);
+                Main.SetActive(true);
             }
             else
             {
