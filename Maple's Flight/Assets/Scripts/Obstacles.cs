@@ -94,22 +94,36 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(0, obstaclePref.Length); //
+            int obsIdx = Random.Range(0, obstaclePref.Length); // 0, obstaclePref.Length
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
             obstacles[idx].transform.localPosition = new Vector3(840f, GetYPos(obsIdx), 0f);
+
             
-            if (obsIdx == 0 && !animals) // 0번 장애물일 때 가끔 토끼 등장 (일단 0.7)로 ㄲ
+            if (obsIdx == 0 && !animals) // 0번 장애물일 때 토끼 등장 확률 유
             {
                 //int upIdx = Random.Range(0, animalPref.Length);
                 //animalPref[upIdx]
                 animals = Instantiate(animalPref[0], Vector3.zero, Quaternion.identity);
                 animals.transform.SetParent(aniParent);
                 animals.transform.localScale = new Vector3(100f, 100f, 0f);
-                animals.transform.localPosition = new Vector3(840-19, 53, -1f);
+                animals.transform.localPosition = new Vector3(821, 53, -1);
             }
-            
+            else if (obsIdx == 1 && !animals) // 1번 장애물일 때 새 등장 확률 유
+            {
+                animals = Instantiate(animalPref[1], Vector3.zero, Quaternion.identity);
+                animals.transform.SetParent(aniParent);
+                animals.transform.localScale = new Vector3(100f, 100f, 0f);
+                animals.transform.localPosition = new Vector3(945, -150, -1);
+            }
+            else if (obsIdx == 4 && !animals) // 4번 장애물일 때 다람쥐 등장 확률 유
+            {
+                animals = Instantiate(animalPref[2], Vector3.zero, Quaternion.identity);
+                animals.transform.SetParent(aniParent);
+                animals.transform.localScale = new Vector3(100f, 100f, 0f);
+                animals.transform.localPosition = new Vector3(940, -100, -1);
+            }
 
             if (++idx == 5) idx = 0;
         }
