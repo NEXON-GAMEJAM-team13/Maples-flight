@@ -6,9 +6,6 @@ using BackEnd;
 
 public class BackendManager : MonoBehaviour
 {
-    [SerializeField]
-    TextMeshProUGUI googlehashText;
-
     private void Awake()
     {
         // Update 메소드의 Backend.AsyncPoll(); 호출 위해 파괴 ㄴㄴ
@@ -37,8 +34,7 @@ public class BackendManager : MonoBehaviour
             Debug.LogError("초기화 실패 : " + bro); // 실패일 경우 statusCode 400대 에러 발생 
         }
 
-        //example
-        string googlehash = Backend.Utils.GetGoogleHash();
-        googlehashText.text = googlehash;
+        //string googlehash = Backend.Utils.GetGoogleHash();
+        //googlehashText.text = googlehash;
     }
 }
