@@ -23,8 +23,8 @@ public class Login : LoginBase
     {
         ResetUI(imageID, imagePW);
 
-        if (IsFieldDataEmpty(imageID, inputFieldID.text, "¾ÆÀÌµð")) return;
-        if (IsFieldDataEmpty(imagePW, inputFieldPW.text, "ºñ¹Ð¹øÈ£")) return;
+        if (IsFieldDataEmpty(imageID, inputFieldID.text, "ï¿½ï¿½ï¿½Ìµï¿½")) return;
+        //  if (IsFieldDataEmpty(imagePW, inputFieldPW.text, "ï¿½ï¿½Ð¹ï¿½È£")) return;
 
         btnLogin.interactable = false;
 
@@ -39,8 +39,8 @@ public class Login : LoginBase
         {
             StopCoroutine(nameof(LoginProcess));
 
-            if (callback.IsSuccess()) //·Î±×ÀÎ¼º°ø
-                SetMessage($"{UserInfo.Data.nickname}´Ô È¯¿µÇÕ´Ï´Ù.");
+            if (callback.IsSuccess()) //ï¿½Î±ï¿½ï¿½Î¼ï¿½ï¿½ï¿½
+                SetMessage($"{UserInfo.Data.nickname}ï¿½ï¿½ È¯ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
             else
             {
                 btnLogin.interactable = true;
@@ -58,7 +58,7 @@ public class Login : LoginBase
                         break;
                 }
 
-                //if (message.Contains("ºñ¹Ð¹øÈ£"))
+                //if (message.Contains("ï¿½ï¿½Ð¹ï¿½È£"))
             }
 
         });
@@ -71,7 +71,7 @@ public class Login : LoginBase
         while (true)
         {
             time += Time.deltaTime;
-            SetMessage($"·Î±×ÀÎ ÁßÀÔ´Ï´Ù... {time:F1}");
+            SetMessage($"ï¿½Î±ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ô´Ï´ï¿½... {time:F1}");
 
             yield return null;
         }
@@ -83,17 +83,17 @@ public class Login : LoginBase
         //string PW = "abc";
         //string nickname = "wooyeon";
 
-        // È¸¿ø°¡ÀÔ
+        // È¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         //Backend.BMember.CustomSignUp(ID, PW);
 
-        // ·Î±×ÀÎ
+        // ï¿½Î±ï¿½ï¿½ï¿½
         //Backend.BMember.CustomLogin(ID, PW);
 
-        // ´Ð³×ÀÓ ¼³Á¤
-        // ÃÖÃÊ ´Ð³×ÀÓ
+        // ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½
         //Backend.BMember.CreateNickname(nickname);
-        // ÀÌ¹Ì ÀÖ´Â ´Ð³×ÀÓ ¼öÁ¤
+        // ï¿½Ì¹ï¿½ ï¿½Ö´ï¿½ ï¿½Ð³ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         //Backend.BMember.UpdateNickname(nickname);
     }
-    
+
 }
