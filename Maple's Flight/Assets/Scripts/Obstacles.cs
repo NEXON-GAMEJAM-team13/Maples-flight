@@ -94,7 +94,7 @@ public class Obstacles : MonoBehaviour
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
             obstacles[idx].transform.localPosition = new Vector3(840f, GetYPos(obsIdx), 0f);
             
-            if (obsIdx == 0 && !animals) // 0¹ø Àå¾Ö¹°ÀÏ ¶§ °¡²û Åä³¢ µîÀå
+            if (obsIdx == 0 && !animals) // 0¹ø Àå¾Ö¹°ÀÏ ¶§ °¡²û Åä³¢ µîÀå (ÀÏ´Ü 0.7)·Î ¤¢
             {
                 //int upIdx = Random.Range(0, animalPref.Length);
                 //animalPref[upIdx]
