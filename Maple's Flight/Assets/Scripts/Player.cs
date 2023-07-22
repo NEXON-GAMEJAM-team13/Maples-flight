@@ -7,6 +7,8 @@ public class Player : MonoBehaviour
     Rigidbody2D rigid2D;
     [SerializeField]
     float resetSpeed = 0.5f;
+    [SerializeField]
+    Obstacles Obstacles;
     
     void Start()
     {
@@ -23,8 +25,15 @@ public class Player : MonoBehaviour
         //ÅÍÄ¡
         //if ((Input.touchCount == 1 && Input.GetTouch(0).phase == TouchPhase.Began) || Input.GetMouseButtonDown(0))
         //{
-            
+
         //}
+
+        if (transform.localPosition.y < -1240f)
+        {
+            GameManager.instance.isGameOver = true;
+            Obstacles.GameOver();
+            gameObject.SetActive(false);
+        }
     }
 
     public void UpBtn()

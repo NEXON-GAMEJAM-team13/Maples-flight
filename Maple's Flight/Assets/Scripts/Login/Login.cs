@@ -40,7 +40,7 @@ public class Login : LoginBase
             StopCoroutine(nameof(LoginProcess));
 
             if (callback.IsSuccess()) //로그인성공
-                SetMessage($"{inputFieldID.text}님 환영합니다.");
+                SetMessage($"{UserInfo.Data.nickname}님 환영합니다.");
             else
             {
                 btnLogin.interactable = true;

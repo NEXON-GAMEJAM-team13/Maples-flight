@@ -1,9 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class Obstacles : MonoBehaviour
 {
+    [SerializeField]
+    TextMeshProUGUI time_txt;
+    [SerializeField]
+    GameObject gameOverPanel;
+    [SerializeField]
+    TextMeshProUGUI nowScore_txt;
+    [SerializeField]
+    TextMeshProUGUI bestScore_txt;
+
     [SerializeField]
     float stageTime;  //현재 경과 시간
     [SerializeField]
@@ -22,14 +33,31 @@ public class Obstacles : MonoBehaviour
     [SerializeField] 
     float speed;
 
-    void Start()
+    public void GameStart()
     {
+        GameManager.instance.isGameOver = false;
         StartCoroutine("Timer");
     }
 
     void Update()
     {
-        MakeObstacles();
+        if (!GameManager.instance.isGameOver)
+        {
+            time_txt.text = ((int)(stageTime / 10)).ToString();
+            MakeObstacles();
+        }
+    }
+
+    public void GameOver()
+    {
+        StopAllCoroutines();
+        GameManager.instance.SetScore((int)(stageTime / 10));
+        gameOverPanel.SetActive(true);
+        Debug.Log("게임오버~");
+        gameObject.SetActive(false);
+
+        nowScore_txt.text = ((int)(stageTime / 10)).ToString();
+        bestScore_txt.text = ((int)(stageTime / 10)).ToString();
     }
 
     void MakeObstacles()

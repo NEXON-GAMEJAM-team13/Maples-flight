@@ -1,13 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class GameData : MonoBehaviour
+[System.Serializable]
+public class GameData
 {
+    public int nowScore;
     public int bestScore;
+
+    private void Awake()
+    {
+        Reset();
+    }
 
     public void Reset()
     {
+        nowScore = 0;
         bestScore = 0;
     }
+
+    
 }
