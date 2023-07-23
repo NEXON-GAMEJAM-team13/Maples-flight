@@ -100,7 +100,7 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(0, obstaclePref.Length); // 0, obstaclePref.Length
+            int obsIdx = Random.Range(4, 5); // 0, obstaclePref.Length
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);

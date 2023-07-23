@@ -8,10 +8,12 @@ public class ToggleButton : MonoBehaviour
     public Sprite on;
     public Sprite off;
 
-    public bool[] soundActive;
-
-    public Button[] btn = new Button[2];
-    public Image[] statusImage;
+    [SerializeField]
+    bool[] soundActive;
+    [SerializeField]
+    Button[] btn = new Button[2];
+    [SerializeField]
+    Image[] statusImage;
 
     void Awake()
     {
@@ -22,16 +24,12 @@ public class ToggleButton : MonoBehaviour
         }
     }
 
-    // Start is called before the first frame update
-
-
     public void SoundBtnClk(int val) //0 1
     {
         if (soundActive[val])
         {
             btn[val].transform.localPosition = new Vector3(90, btn[val].transform.localPosition.y, btn[val].transform.localPosition.z);
             soundActive[val] = false;
-
 
             statusImage[val].sprite = off;
 

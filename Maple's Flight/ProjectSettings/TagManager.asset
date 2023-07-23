@@ -4,7 +4,14 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Obstacle
+  - Tree
+  - Stone
+  - Branch
+  - Ground
+  - rabbit
+  - bird
+  - squirrel
+  - top
   layers:
   - Default
   - TransparentFX
