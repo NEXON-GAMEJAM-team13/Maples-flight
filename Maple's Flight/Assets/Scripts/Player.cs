@@ -26,11 +26,22 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
-
-
-        if (transform.localPosition.y < -1240f)
+        if (transform.localPosition.y > 1400f)
         {
+            GameManager.instance.Ending(0);
+            GameOver();
+        }
+
+        if (transform.localPosition.y < -700f)
+        {
+            if (GameManager.instance.GetNowScore() <= 15)
+                GameManager.instance.Ending(7);
+            else if (GameManager.instance.GetNowScore() <= 30)
+                GameManager.instance.Ending(8);
+            else if (GameManager.instance.GetNowScore() <= 45)
+                GameManager.instance.Ending(9);
+            else if (GameManager.instance.GetNowScore() <= 60)
+                GameManager.instance.Ending(10);
             GameOver();
         }
     }
@@ -57,9 +68,34 @@ public class Player : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Obstacle"))
+        if (collision.CompareTag("Tree"))
         {
-            Debug.Log("부딫힘~");
+            GameManager.instance.Ending(2);
+            GameOver();
+        }
+        else if (collision.CompareTag("Stone"))
+        {
+            GameManager.instance.Ending(3);
+            GameOver();
+        }
+        else if (collision.CompareTag("Branch"))
+        {
+            GameManager.instance.Ending(1);
+            GameOver();
+        }
+        else if (collision.CompareTag("rabbit"))
+        {
+            GameManager.instance.Ending(6);
+            GameOver();
+        }
+        else if (collision.CompareTag("bird"))
+        {
+            GameManager.instance.Ending(4);
+            GameOver();
+        }
+        else if (collision.CompareTag("squirrel"))
+        {
+            GameManager.instance.Ending(5);
             GameOver();
         }
         else

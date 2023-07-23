@@ -44,9 +44,6 @@ public class Obstacles : MonoBehaviour
     [SerializeField] 
     float speed;
 
-    [SerializeField]
-    Image btn;
-
     public void GameStart()
     {
         for (int i = 0; i < 3; i++)
@@ -100,7 +97,7 @@ public class Obstacles : MonoBehaviour
         if (stageTime > nextTime)
         {
             nextTime = stageTime + obsCycle;
-            int obsIdx = Random.Range(4, 5); // 0, obstaclePref.Length
+            int obsIdx = Random.Range(0, obstaclePref.Length); // 0, obstaclePref.Length
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
             obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
@@ -191,10 +188,5 @@ public class Obstacles : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         stageTime++;
         StartCoroutine(Timer());
-    }
-
-    void MoveBtn()
-    {
-        btn.GetComponent<RectTransform>().transform.localPosition = new Vector3(btn.GetComponent<RectTransform>().transform.localPosition.x + 10, btn.GetComponent<RectTransform>().transform.localPosition.y, btn.GetComponent<RectTransform>().transform.localPosition.z);
     }
 }

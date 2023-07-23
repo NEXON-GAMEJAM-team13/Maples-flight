@@ -7,11 +7,9 @@ TagManager:
   - Tree
   - Stone
   - Branch
-  - Ground
   - rabbit
   - bird
   - squirrel
-  - top
   layers:
   - Default
   - TransparentFX
