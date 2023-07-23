@@ -53,4 +53,9 @@ public class GameManager : MonoBehaviour
             DailyRankRegister.GameData.bestScore = score;
         return DailyRankRegister.GameData.bestScore;
     }
+
+    public bool isEndOpen(int val)
+    {
+        return DailyRankRegister.GameData.isOpenedEnding[val];
+    }
 }
