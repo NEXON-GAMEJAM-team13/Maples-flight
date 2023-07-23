@@ -7,11 +7,16 @@ public class SettingController : MonoBehaviour
     [SerializeField]
     GameObject ingameCanvas;
     [SerializeField]
+    GameObject video;
+    [SerializeField]
     GameObject settingBtn;
 
     private void Update()
     {
-        settingBtn.SetActive(!ingameCanvas.activeInHierarchy);
-        
+        if (ingameCanvas.activeInHierarchy || (video && video.activeInHierarchy))
+            settingBtn.SetActive(false);
+        else
+            settingBtn.SetActive(true);
+
     }
 }
