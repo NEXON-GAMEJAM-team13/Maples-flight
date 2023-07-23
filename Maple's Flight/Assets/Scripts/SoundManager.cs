@@ -4,34 +4,15 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private static SoundManager instance = null;
-
-    public bool[] toggleActive = new bool[2];
-    void Awake()
+    // Start is called before the first frame update
+    void Start()
     {
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }
-    public static SoundManager Instance
-    {
-        get
-        {
-            if (null == instance)
-            {
-                return null;
-            }
-            return instance;
-        }
+        
     }
 
-
-
-
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 }

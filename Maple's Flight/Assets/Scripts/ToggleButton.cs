@@ -26,24 +26,21 @@ public class ToggleButton : MonoBehaviour
 
     public void SoundBtnClk(int val) //0 1
     {
-        if (SoundManager.Instance.toggleActive[val])
+        if (soundActive[val])
         {
             btn[val].transform.localPosition = new Vector3(90, btn[val].transform.localPosition.y, btn[val].transform.localPosition.z);
-            // soundActive[val] = false;
-            SoundManager.Instance.toggleActive[val] = false;
+            soundActive[val] = false;
 
             statusImage[val].sprite = off;
 
-
-
+            //volumeㅈㅗㅈㅓㄹㅎㅏㄴㅡㄴ ㅁㅔㅅㅗㄷㅡ ㅅㅏㅂㅇㅣㅂ
 
         }
         else
         {
-            Debug.Log("BGMOFF");
             btn[val].transform.localPosition = new Vector3(190, btn[val].transform.localPosition.y, btn[val].transform.localPosition.z);
-            // soundActive[val] = true;
-            SoundManager.Instance.toggleActive[val] = true;
+            soundActive[val] = true;
+
             statusImage[val].sprite = on;
 
             //volume ㅈㅗㅈㅓㄹㅎㅏㄴㅡㄴ ㅁㅔㅅㅗㄷㅡ ㅅㅏㅂㅇㅣㅂ
