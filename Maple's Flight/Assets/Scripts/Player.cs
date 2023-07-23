@@ -5,7 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     Rigidbody2D rigid2D;
+    [SerializeField] AudioClip JumpSound;
 
+    [SerializeField] AudioClip DashSound;
+    [SerializeField] AudioClip FallingSound;
+    private AudioSource audioSource;
 
     [SerializeField]
     float resetSpeed = 0.5f;
@@ -47,12 +51,22 @@ public class Player : MonoBehaviour
     {
         rigid2D.velocity = Vector3.zero;
         rigid2D.AddForce(Vector3.up * 200);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = JumpSound;
+            audioSource.Play();
+        }
     }
 
     public void FastBtn()
     {
         rigid2D.velocity = Vector3.zero;
         rigid2D.AddForce(Vector3.right * 80);
+        if (!audioSource.isPlaying)
+        {
+            audioSource.clip = DashSound;
+            audioSource.Play();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)
@@ -60,7 +74,13 @@ public class Player : MonoBehaviour
         if (collision.CompareTag("Obstacle"))
         {
             Debug.Log("부딫힘~");
+            if (!audioSource.isPlaying)
+            {
+                audioSource.clip = FallingSound;
+                audioSource.Play();
+            }
             GameOver();
+
         }
         else
             Debug.Log("뭐에 부딫힘?");
