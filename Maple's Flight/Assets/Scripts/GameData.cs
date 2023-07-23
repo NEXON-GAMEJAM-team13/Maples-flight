@@ -3,18 +3,19 @@ public class GameData
 {
     public int nowScore;
     public int bestScore;
-    public bool[] isOpenedEnding = { false, false, false, false, false, false, false, false, false, false, false };
+    public bool[] isOpenedEnding = new bool[11];
 
     private void Awake()
     {
-        
-        //Reset();
+        Reset();
     }
 
     public void Reset()
     {
         nowScore = 0;
         bestScore = 0;
+        for (int i = 0; i < 11; i++)
+            isOpenedEnding[i] = false;
     }
 
 
