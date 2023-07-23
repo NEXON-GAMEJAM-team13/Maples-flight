@@ -3,7 +3,7 @@ public class GameData
 {
     public int nowScore;
     public int bestScore;
-    public bool[] isOpenedEnding = { false, false, false, false, false, false, false, false, false, false };
+    public bool[] isOpenedEnding = { false, false, false, false, false, false, false, false, false, false, false };
 
     private void Awake()
     {
