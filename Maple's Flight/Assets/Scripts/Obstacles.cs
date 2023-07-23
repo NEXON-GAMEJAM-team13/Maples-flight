@@ -44,9 +44,6 @@ public class Obstacles : MonoBehaviour
     [SerializeField] 
     float speed;
 
-    [SerializeField]
-    Image btn;
-
     public void GameStart()
     {
         for (int i = 0; i < 3; i++)
@@ -191,10 +188,5 @@ public class Obstacles : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         stageTime++;
         StartCoroutine(Timer());
-    }
-
-    void MoveBtn()
-    {
-        btn.GetComponent<RectTransform>().transform.localPosition = new Vector3(btn.GetComponent<RectTransform>().transform.localPosition.x + 10, btn.GetComponent<RectTransform>().transform.localPosition.y, btn.GetComponent<RectTransform>().transform.localPosition.z);
     }
 }

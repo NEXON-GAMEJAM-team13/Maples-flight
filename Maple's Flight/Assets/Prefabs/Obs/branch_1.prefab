@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 28132652009959612}
   m_Layer: 5
   m_Name: branch_1
-  m_TagString: Obstacle
+  m_TagString: Branch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

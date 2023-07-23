@@ -9,7 +9,12 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     DailyRankRegister DailyRankRegister;
+    public EndingController EndingController;
+    [SerializeField]
+    bool[] isOpenedEnding = { false, false, false, false, false, false, false, false, false, false };
+
     public bool isPlaying = false; // �����ϴ� ������
+    public int nowEnding;
 
     public static GameManager instance = null;
 
@@ -23,6 +28,12 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
+    public void Ending(int endNum)
+    {
+        isOpenedEnding[endNum] = true;
+        nowEnding = endNum;
+    }
+
     public void SetRank(int score)
     {
         DailyRankRegister.Process(score);
@@ -31,6 +42,11 @@ public class GameManager : MonoBehaviour
     public void SetNowScore(int score)
     {
         DailyRankRegister.GameData.nowScore = score;
+    }
+
+    public int GetNowScore()
+    {
+        return DailyRankRegister.GameData.nowScore;
     }
 
     public int SetBestScore(int score)
