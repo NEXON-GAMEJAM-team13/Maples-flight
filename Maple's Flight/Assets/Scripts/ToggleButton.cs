@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ToggleButton : MonoBehaviour
+{
+    public Sprite on;
+    public Sprite off;
+
+    public bool[] soundActive;
+
+    public Button[] btn = new Button[2];
+    public Image[] statusImage;
+
+    void Awake()
+    {
+        for (int i = 0; i < 2; i++)
+        {
+            soundActive[i] = true;
+            statusImage[i].sprite = on;
+        }
+    }
+
+    // Start is called before the first frame update
+
+
+    public void SoundBtnClk(int val) //0 1
+    {
+        if (soundActive[val])
+        {
+            btn[val].transform.localPosition = new Vector3(90, btn[val].transform.localPosition.y, btn[val].transform.localPosition.z);
+            soundActive[val] = false;
+
+
+            statusImage[val].sprite = off;
+
+            //volumeㅈㅗㅈㅓㄹㅎㅏㄴㅡㄴ ㅁㅔㅅㅗㄷㅡ ㅅㅏㅂㅇㅣㅂ
+
+        }
+        else
+        {
+            btn[val].transform.localPosition = new Vector3(190, btn[val].transform.localPosition.y, btn[val].transform.localPosition.z);
+            soundActive[val] = true;
+
+            statusImage[val].sprite = on;
+
+            //volume ㅈㅗㅈㅓㄹㅎㅏㄴㅡㄴ ㅁㅔㅅㅗㄷㅡ ㅅㅏㅂㅇㅣㅂ
+        }
+    }
+
+}
