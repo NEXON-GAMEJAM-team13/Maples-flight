@@ -6,17 +6,22 @@ public class VideoController : MonoBehaviour
 {
     [SerializeField]
     GameObject raw;
+    [SerializeField]
+    SoundManager soundManager;
 
     private void OnEnable()
     {
-        Invoke("dest", 43f);
-        Debug.Log("½ÃÀÛ");
+        Invoke("dest", 44f);
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½");
     }
 
     private void dest()
     {
         Destroy(this.gameObject);
         raw.SetActive(false);
-        Debug.Log("»ç¶óÁ®");
+        Debug.Log("ï¿½ï¿½ï¿½ï¿½ï¿½");
+
+        Debug.Log("SoundPlaying:" + soundManager.soundPlaying);
+        soundManager.soundPlaying = true;
     }
 }
