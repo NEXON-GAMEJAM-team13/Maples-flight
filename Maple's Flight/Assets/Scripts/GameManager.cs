@@ -10,10 +10,8 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     DailyRankRegister DailyRankRegister;
     public EndingController EndingController;
-    [SerializeField]
-    bool[] isOpenedEnding = { false, false, false, false, false, false, false, false, false, false };
 
-    public bool isPlaying = false; // �����ϴ� ������
+    public bool isPlaying = false; // 게임중인지
     public int nowEnding;
 
     public static GameManager instance = null;
@@ -30,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public void Ending(int endNum)
     {
-        isOpenedEnding[endNum] = true;
+        DailyRankRegister.GameData.isOpenedEnding[endNum] = true;
         nowEnding = endNum;
     }
 

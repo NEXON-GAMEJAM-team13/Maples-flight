@@ -26,7 +26,14 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (transform.localPosition.y > 1400f)
+        // 조절
+        if (transform.localPosition.x > -330f)
+        {
+            transform.Translate(Vector3.right * resetSpeed * -1 * Time.deltaTime);
+        }
+
+        // 아웃
+        if (transform.localPosition.y > 1400f || transform.localPosition.x > 650f)
         {
             GameManager.instance.Ending(0);
             GameOver();
