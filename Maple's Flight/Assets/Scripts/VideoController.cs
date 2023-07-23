@@ -8,6 +8,8 @@ public class VideoController : MonoBehaviour
     GameObject raw;
     [SerializeField]
     SoundManager soundManager;
+    [SerializeField]
+    GameObject skipBtn;
 
     private void OnEnable()
     {
@@ -15,10 +17,11 @@ public class VideoController : MonoBehaviour
         Debug.Log("����");
     }
 
-    private void dest()
+    public void dest()
     {
         Destroy(this.gameObject);
         raw.SetActive(false);
+        skipBtn.SetActive(false);
         Debug.Log("�����");
 
         Debug.Log("SoundPlaying:" + soundManager.soundPlaying);

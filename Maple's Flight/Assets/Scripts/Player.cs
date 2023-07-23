@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
 
         if (transform.localPosition.y < -700f)
         {
+            GameOver();
             if (GameManager.instance.GetNowScore() <= 15)
                 GameManager.instance.Ending(7);
             else if (GameManager.instance.GetNowScore() <= 30)
@@ -49,7 +50,6 @@ public class Player : MonoBehaviour
                 GameManager.instance.Ending(9);
             else if (GameManager.instance.GetNowScore() <= 60)
                 GameManager.instance.Ending(10);
-            GameOver();
         }
     }
 
