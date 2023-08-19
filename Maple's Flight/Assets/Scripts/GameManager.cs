@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public EndingController EndingController;
 
     public bool isPlaying = false; // 게임중인지
+    public bool isDiary = false; // 도감 보는 중인지
     public static int endingCnt = 11;
     public int scoreNow;
     public int endingNow;
@@ -27,6 +28,7 @@ public class GameManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
+
 
     public void SetEnding(int endNum)
     {

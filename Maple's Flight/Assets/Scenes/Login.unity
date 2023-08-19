@@ -415,7 +415,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -932.19995}
+  m_AnchoredPosition: {x: 0, y: -932.2}
   m_SizeDelta: {x: 786, y: 3360}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &82163578
@@ -1423,10 +1423,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD638\uAE30\uC2EC\uC744 \uCC38\uC9C0 \uBABB\uD558\uACE0\n\uB098\uBB34
-    \uC704\uB85C \uD280\uC5B4\uB098\uC628 \uD1A0\uB07C\uC640\\n\uBD80\uB52A\uD600
-    \uBA40\uB9AC \uD295\uACA8\uB098\uAC14\uC5B4\uC694.\\n\uC81C\uAC00 \uBCF4\uC774\uC9C0
-    \uC54A\uC744 \uC815\uB3C4\uB77C\uB2C8..\n\uBB50\uAC00 \uADF8\uB9AC \uAD81\uAE08\uD55C\uAC78\uAE4C\uC694?"
+  m_text: "\uC5C4\uB9C8\uCC98\uB7FC \uD06C\uACE0 \uC544\uB984\uB2E4\uC6B4\\n\uB2E8\uD48D\uB098\uBB34\uAC00
+    \uB410\uC5B4\uC694!\\n\uC774\uC81C \uC774 \uACF3\uC5D0\uC11C \uD3C9\uD654\uB86D\uB358\\n\uC608\uC804
+    \uC6B0\uB9AC \uB9C8\uC744\uC758 \uBAA8\uC2B5\uC744\\n\uB418\uCC3E\uC744 \uAC70\uC608\uC694.\\n\uC9C0\uCF1C\uBD10\uC8FC\uC138\uC694
+    \uC5C4\uB9C8!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 65f1c90f0f0aa48498417c1a9f5a291a, type: 2}
   m_sharedMaterial: {fileID: -6570526686573891952, guid: 65f1c90f0f0aa48498417c1a9f5a291a, type: 2}
@@ -1453,8 +1453,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 80
-  m_fontSizeBase: 80
+  m_fontSize: 75
+  m_fontSizeBase: 75
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 9.58
+  m_lineSpacing: 18.86
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -7302,7 +7302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 27, y: 660}
+  m_AnchoredPosition: {x: 27, y: 651}
   m_SizeDelta: {x: 900, y: 150.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1110602130
@@ -7325,11 +7325,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uD638\uAE30\uC2EC \uB300\uB9C8\uC655 \uD1A0\uB07C\uB294\\n\uAD81\uAE08\uD55C\uAC78
-    \uCC38\uC9C0 \uBABB\uD574\uC694!"
+  m_text: "\uC0AC\uCD98\uAE30 \uB2E8\uD48D\uB098\uBB34\uAC00 \uB418\uC5C8\uC5B4\uC694!"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 65f1c90f0f0aa48498417c1a9f5a291a, type: 2}
-  m_sharedMaterial: {fileID: -6570526686573891952, guid: 65f1c90f0f0aa48498417c1a9f5a291a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8e33bfaf1fea4e54496b3982c58f686c, type: 2}
+  m_sharedMaterial: {fileID: -6570526686573891952, guid: 8e33bfaf1fea4e54496b3982c58f686c, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -7353,8 +7352,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 83.8
-  m_fontSizeBase: 83.8
+  m_fontSize: 80
+  m_fontSizeBase: 80
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7365,7 +7364,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 21.27
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -14331,10 +14330,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 849252131}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1288974690}
+        m_TargetAssemblyTypeName: DiaryController, Assembly-CSharp
+        m_MethodName: ExitEndingPage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -14342,18 +14341,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1288974688}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &2000883354
 MonoBehaviour:
@@ -14980,7 +14967,9 @@ MonoBehaviour:
   DailyRankRegister: {fileID: 468888277}
   EndingController: {fileID: 2053419140}
   isPlaying: 0
-  nowEnding: 0
+  isDiary: 0
+  scoreNow: 0
+  endingNow: 0
 --- !u!1 &2053609445
 GameObject:
   m_ObjectHideFlags: 0

@@ -38,8 +38,16 @@ public class DiaryController : MonoBehaviour
     {
         if (GameManager.instance.ShowEnding(idx))
         {
+            GameManager.instance.isDiary = true;
             diary.SetActive(false);
             page.SetActive(true);
         }
+    }
+
+    public void ExitEndingPage()
+    {
+        GameManager.instance.isDiary = false;
+        diary.SetActive(true);
+        page.SetActive(false);
     }
 }
