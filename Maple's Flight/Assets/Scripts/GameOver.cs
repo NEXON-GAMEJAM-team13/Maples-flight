@@ -15,8 +15,8 @@ public class GameOver : MonoBehaviour
 
     private void OnEnable()
     {
-        thumbnail.sprite = GameManager.instance.EndingController.GetEndingImage(GameManager.instance.nowEnding);
-        titleTxt.text = GameManager.instance.EndingController.GetEndingTitleText(GameManager.instance.nowEnding);
-        descTxt.text = GameManager.instance.EndingController.GetEndingDescText(GameManager.instance.nowEnding);
+        thumbnail.sprite = GameManager.instance.EndingController.GetEndingImage(GameManager.instance.endingNow);
+        titleTxt.text = GameManager.instance.EndingController.GetEndingTitleText(GameManager.instance.endingNow);
+        descTxt.text = GameManager.instance.EndingController.GetEndingDescText(GameManager.instance.endingNow);
     }
 }

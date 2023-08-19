@@ -59,7 +59,9 @@ public class Obstacles : MonoBehaviour
     {
         if (GameManager.instance.isPlaying)
         {
-            time_txt.text = ((int)(stageTime / 10)).ToString();
+            int score = (int)(stageTime / 10);
+            GameManager.instance.scoreNow = score;
+            time_txt.text = score.ToString();
             MakeObstacles();
         }
     }
@@ -83,6 +85,7 @@ public class Obstacles : MonoBehaviour
             gameOverPanel.transform.parent.GetChild(i).gameObject.SetActive(false);
 
         int score = (int)(stageTime / 10);
+        //GameManager.instance.scoreNow = score;
         GameManager.instance.SetRank(score);
         nowScore_txt.text = score.ToString();
         GameManager.instance.SetNowScore(score);

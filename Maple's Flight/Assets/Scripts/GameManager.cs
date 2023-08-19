@@ -12,7 +12,9 @@ public class GameManager : MonoBehaviour
     public EndingController EndingController;
 
     public bool isPlaying = false; // 게임중인지
-    public int nowEnding;
+    public static int endingCnt = 11;
+    public int scoreNow;
+    public int endingNow;
 
     public static GameManager instance = null;
 
@@ -26,10 +28,21 @@ public class GameManager : MonoBehaviour
             Destroy(gameObject);
     }
 
-    public void Ending(int endNum)
+    public void SetEnding(int endNum)
     {
-        DailyRankRegister.GameData.isOpenedEnding[endNum] = true;
-        nowEnding = endNum;
+        if (!DailyRankRegister.GameData.isOpenedEnding[endNum])
+            DailyRankRegister.GameData.isOpenedEnding[endNum] = true;
+        endingNow = endNum;
+    }
+
+    public bool ShowEnding(int endNum)
+    {
+        if (DailyRankRegister.GameData.isOpenedEnding[endNum])
+        {
+            endingNow = endNum;
+            return true;
+        }
+        return false;
     }
 
     public void SetRank(int score)

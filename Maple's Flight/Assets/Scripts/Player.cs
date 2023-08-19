@@ -35,21 +35,23 @@ public class Player : MonoBehaviour
         // 아웃
         if (transform.localPosition.y > 1400f || transform.localPosition.x > 650f)
         {
-            GameManager.instance.Ending(0);
+            GameManager.instance.SetEnding(0);
             GameOver();
         }
 
         if (transform.localPosition.y < -700f)
         {
+            int score = GameManager.instance.scoreNow;
+
+            if (score <= 15)
+                GameManager.instance.SetEnding(7);
+            else if (score <= 30)
+                GameManager.instance.SetEnding(8);
+            else if (score <= 45)
+                GameManager.instance.SetEnding(9);
+            else if (score <= 60)
+                GameManager.instance.SetEnding(10);
             GameOver();
-            if (GameManager.instance.GetNowScore() <= 15)
-                GameManager.instance.Ending(7);
-            else if (GameManager.instance.GetNowScore() <= 30)
-                GameManager.instance.Ending(8);
-            else if (GameManager.instance.GetNowScore() <= 45)
-                GameManager.instance.Ending(9);
-            else if (GameManager.instance.GetNowScore() <= 60)
-                GameManager.instance.Ending(10);
         }
     }
 
@@ -77,32 +79,32 @@ public class Player : MonoBehaviour
     {
         if (collision.CompareTag("Tree"))
         {
-            GameManager.instance.Ending(2);
+            GameManager.instance.SetEnding(2);
             GameOver();
         }
         else if (collision.CompareTag("Stone"))
         {
-            GameManager.instance.Ending(3);
+            GameManager.instance.SetEnding(3);
             GameOver();
         }
         else if (collision.CompareTag("Branch"))
         {
-            GameManager.instance.Ending(1);
+            GameManager.instance.SetEnding(1);
             GameOver();
         }
         else if (collision.CompareTag("rabbit"))
         {
-            GameManager.instance.Ending(6);
+            GameManager.instance.SetEnding(6);
             GameOver();
         }
         else if (collision.CompareTag("bird"))
         {
-            GameManager.instance.Ending(4);
+            GameManager.instance.SetEnding(4);
             GameOver();
         }
         else if (collision.CompareTag("squirrel"))
         {
-            GameManager.instance.Ending(5);
+            GameManager.instance.SetEnding(5);
             GameOver();
         }
         else
