@@ -44,6 +44,11 @@ public class Obstacles : MonoBehaviour
     [SerializeField] 
     float speed;
 
+    [SerializeField]
+    GameObject newScore;
+    [SerializeField]
+    GameObject newEnd;
+
     public void GameStart()
     {
         for (int i = 0; i < 3; i++)
@@ -80,16 +85,18 @@ public class Obstacles : MonoBehaviour
 
         obsParent.gameObject.SetActive(false);
         gameOverPanel.SetActive(true);
-
-        for (int i=0; i<3; i++)
+        for (int i = 0; i < 3; i++)
             gameOverPanel.transform.parent.GetChild(i).gameObject.SetActive(false);
 
         int score = (int)(stageTime / 10);
-        //GameManager.instance.scoreNow = score;
         GameManager.instance.SetRank(score);
-        nowScore_txt.text = score.ToString();
         GameManager.instance.SetNowScore(score);
-        bestScore_txt.text = GameManager.instance.SetBestScore(score).ToString();
+        GameManager.instance.SetBestScore(score);
+        nowScore_txt.text = score.ToString();
+        bestScore_txt.text = GameManager.instance.GetBestScore().ToString();
+
+        newScore.SetActive(GameManager.instance.isNewScore);
+        newEnd.SetActive(GameManager.instance.isNewEnd);
     }
 
     void MakeObstacles()

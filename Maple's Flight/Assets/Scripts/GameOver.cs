@@ -6,15 +6,20 @@ using TMPro;
 
 public class GameOver : MonoBehaviour
 {
+    [Header("=엔딩=")]
     [SerializeField]
     Image thumbnail;
     [SerializeField]
     TextMeshProUGUI titleTxt;
     [SerializeField]
     TextMeshProUGUI descTxt;
+    [Header("=그 외=")]
     [SerializeField]
     GameObject retryBtn;
-    
+    [SerializeField]
+    GameObject newScore;
+    [SerializeField]
+    GameObject newEnd;
 
     private void OnEnable()
     {
@@ -23,10 +28,25 @@ public class GameOver : MonoBehaviour
         descTxt.text = GameManager.instance.EndingController.GetEndingDescText(GameManager.instance.endingNow);
 
         Invoke("RetryAble", 1f);
+
+        CheckNew();
+
+        GameManager.instance.Save();
     }
 
     void RetryAble()
     {
         retryBtn.GetComponent<Button>().interactable = true;
+    }
+
+    void CheckNew()
+    {
+        if (GameManager.instance.isNewScore)
+            newScore.SetActive(true);
+        if (GameManager.instance.isNewEnd)
+            newEnd.SetActive(true);
+
+        Debug.Log(GameManager.instance.isNewScore);
+        Debug.Log(GameManager.instance.isNewEnd);
     }
 }
