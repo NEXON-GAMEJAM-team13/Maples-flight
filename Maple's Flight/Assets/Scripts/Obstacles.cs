@@ -190,6 +190,12 @@ public class Obstacles : MonoBehaviour
         }
     }
 
+    public void AddScore()
+    {
+        stageTime += 10;
+        nextTime += 10;
+    }
+
     IEnumerator Timer()
     {
         yield return new WaitForSeconds(0.1f);

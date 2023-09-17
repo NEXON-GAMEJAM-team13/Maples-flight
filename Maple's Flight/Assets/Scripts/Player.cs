@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,11 +17,11 @@ public class Player : MonoBehaviour
         rigid2D = GetComponent<Rigidbody2D>();
     }
 
-    void OnEnable() // ��ũ��Ʈ Ȱ��ȭ�� ������ ����
+    void OnEnable() 
     {
-        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z); // ��ġ �ʱ�ȭ
+        // 위치 초기화, 힘 주기
+        transform.localPosition = new Vector3(-498, 1252, transform.localPosition.z);
         rigid2D.AddForce(Vector3.right * 50);
-
     }
 
     void Update()
@@ -110,9 +110,4 @@ public class Player : MonoBehaviour
         else
             Debug.Log("뭐에 부딫힘?");
     }
-
-
-
-
-
 }
