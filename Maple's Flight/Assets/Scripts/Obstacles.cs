@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +6,7 @@ using TMPro;
 
 public class Obstacles : MonoBehaviour
 {
-    [Header("=Á¡¼ö=")]
+    [Header("=ì ìˆ˜=")]
     [SerializeField]
     TextMeshProUGUI time_txt;
     [SerializeField]
@@ -16,15 +16,15 @@ public class Obstacles : MonoBehaviour
     [SerializeField]
     GameObject gameOverPanel;
 
-    [Header("=½Ã°£=")]
+    [Header("=ì‹œê°„=")]
     [SerializeField]
-    float stageTime;  // ÇöÀç ½Ã°£
+    float stageTime;  // í˜„ì¬ ì‹œê°„
     [SerializeField]
-    float obsCycle; // ´ÙÀ½ Àå¾Ö¹° »ı¼º ÁÖ±â
+    float obsCycle; // ë‹¤ìŒ ì¥ì• ë¬¼ ìƒì„± ì£¼ê¸°
     [SerializeField]
-    float nextTime; // ´ÙÀ½ Àå¾Ö¹° µîÀå ½Ã°£
+    float nextTime; // ë‹¤ìŒ ì¥ì• ë¬¼ ë“±ì¥ ì‹œê°„
 
-    [Header("=µ¿¹° Ä£±¸µé=")]
+    [Header("=ë™ë¬¼ ì¹œêµ¬ë“¤=")]
     [SerializeField]
     GameObject[] animalPref;
     [SerializeField]
@@ -32,7 +32,7 @@ public class Obstacles : MonoBehaviour
     [SerializeField]
     Transform aniParent;
 
-    [Header("=»óÇÏ´Ü Àå¾Ö¹°=")]
+    [Header("=ìƒí•˜ë‹¨ ì¥ì• ë¬¼=")]
     [SerializeField]
     GameObject[] obstaclePref;
     [SerializeField]
@@ -69,7 +69,7 @@ public class Obstacles : MonoBehaviour
     public void GameOver()
     {
         StopAllCoroutines();
-        Debug.Log("°ÔÀÓ¿À¹ö~");
+        Debug.Log("ê²Œì„ì˜¤ë²„~");
 
         for (int i = 0; i < obsParent.childCount; i++)
         {
@@ -103,27 +103,32 @@ public class Obstacles : MonoBehaviour
             int obsIdx = Random.Range(0, obstaclePref.Length); // 0, obstaclePref.Length
             obstacles[idx] = Instantiate(obstaclePref[obsIdx], Vector3.zero, Quaternion.identity);
             obstacles[idx].transform.SetParent(obsParent);
-            obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
+            // ìŠ¤ì¼€ì¼
+            if (obsIdx == 6) // ìƒë‹¨ ì¥ì• ë¬¼ì€ í¬ê²Œ
+                obstacles[idx].transform.localScale = new Vector3(1f, 1f, 0f);
+            else if (obsIdx == 7)
+                obstacles[idx].transform.localScale = new Vector3(0.9f, 0.9f, 0f);
+            else
+                obstacles[idx].transform.localScale = new Vector3(0.8f, 0.8f, 0f);
+            // í¬ì§€ì…˜
             obstacles[idx].transform.localPosition = new Vector3(840f, GetYPos(obsIdx), 0f);
 
             
-            if (obsIdx == 0 && !animals) // 0¹ø Àå¾Ö¹°ÀÏ ¶§ Åä³¢ µîÀå È®·ü À¯
+            if (obsIdx == 0 && !animals) // 0ë²ˆ ì¥ì• ë¬¼ì¼ ë•Œ í† ë¼ ë“±ì¥
             {
-                //int upIdx = Random.Range(0, animalPref.Length);
-                //animalPref[upIdx]
                 animals = Instantiate(animalPref[0], Vector3.zero, Quaternion.identity);
                 animals.transform.SetParent(aniParent);
                 animals.transform.localScale = new Vector3(100f, 100f, 0f);
                 animals.transform.localPosition = new Vector3(821, 53, -1);
             }
-            else if (obsIdx == 1 && !animals) // 1¹ø Àå¾Ö¹°ÀÏ ¶§ »õ µîÀå È®·ü À¯
+            else if (obsIdx == 1 && !animals) // 1ë²ˆ ì¥ì• ë¬¼ì¼ ë•Œ ìƒˆ ë“±ì¥
             {
                 animals = Instantiate(animalPref[1], Vector3.zero, Quaternion.identity);
                 animals.transform.SetParent(aniParent);
                 animals.transform.localScale = new Vector3(100f, 100f, 0f);
                 animals.transform.localPosition = new Vector3(945, -150, -1);
             }
-            else if (obsIdx == 4 && !animals) // 4¹ø Àå¾Ö¹°ÀÏ ¶§ ´Ù¶÷Áã µîÀå È®·ü À¯
+            else if (obsIdx == 4 && !animals) // 4ë²ˆ ì¥ì• ë¬¼ì¼ ë•Œ ë‹¤ëŒì¥ ë“±ì¥
             {
                 animals = Instantiate(animalPref[2], Vector3.zero, Quaternion.identity);
                 animals.transform.SetParent(aniParent);
@@ -159,28 +164,27 @@ public class Obstacles : MonoBehaviour
 
     int GetYPos(int obsIdx)
     {
-        int diff = 10;
         switch (obsIdx)
         {
-            // ³ª¹«
+            // ë‚˜ë¬´
             case 0:
-                return -371 + diff;
+                return -361;
             case 1:
-                return -461 + diff;
+                return -451;
             case 2:
-                return -301 + diff;
-            // µ¹
+                return -291;
+            // ëŒ
             case 3:
-                return -410 + diff;
+                return -400;
             case 4:
-                return -471 + diff;
+                return -461;
             case 5:
-                return -558 + diff;
-            // ³ª¹µ°¡Áö
-            case 6:
-                return 1249 - diff * 2;
+                return -548;
+            // ë‚˜ë­‡ê°€ì§€
+            case 6: // ì‘
+                return 1171;
             case 7:
-                return 1128 - diff * 4;
+                return 1041;
             default:
                 return 0;
         }

@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,9 +19,7 @@ public class DiaryController : MonoBehaviour
 
     private void OnEnable()
     {
-        SetScrollViewPos();
-
-        // ¿£µù ÇØ±İµÈ °Í¸¸ ÄÑ±â
+        // ì—”ë”© í•´ê¸ˆëœ ê²ƒë§Œ ì¼œê¸°
         for (int i = 0; i < GameManager.endingCnt; i++)
         {
             if (GameManager.instance.isEndOpen(i))
@@ -29,7 +27,7 @@ public class DiaryController : MonoBehaviour
         }
     }
 
-    void SetScrollViewPos()
+    public void SetScrollViewPos()
     {
         ScrollContent.anchoredPosition = new Vector3(0, -932.2019f, 0);
     }
