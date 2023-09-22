@@ -1,7 +1,7 @@
 public static class Constants
 {
-	public static readonly string USER_DATA_TABLE = "best_score";
-	public static readonly string DAILY_RANK_UUID = "14fd90c0-282f-11ee-8fa5-41889c1cf4ea";
+	public static readonly string USER_DATA_TABLE = "USER_DATA";
+	public static readonly string DAILY_RANK_UUID = "22c05380-5941-11ee-a0c2-f1e0d1959f2a";
 	public static readonly int MAX_RANK_LIST = 20;
 }
 

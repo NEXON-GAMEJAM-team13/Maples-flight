@@ -36,7 +36,7 @@ public class BackendGameData : MonoBehaviour
             { "bestScore", gameData.bestScore }
         };
 
-        Backend.GameData.Insert("best_score", param, callback =>
+        Backend.GameData.Insert(Constants.USER_DATA_TABLE, param, callback =>
         {
             if (callback.IsSuccess())
             {
@@ -46,6 +46,7 @@ public class BackendGameData : MonoBehaviour
             else
             {
                 // 실패
+                Debug.LogError("게임정보 저장 실패");
             }
         });
     }

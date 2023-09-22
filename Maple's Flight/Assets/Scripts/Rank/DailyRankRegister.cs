@@ -24,11 +24,13 @@ public class DailyRankRegister : MonoBehaviour
 				return;
 			}
 
-			Debug.Log($"데이터 조회에 성공했습니다 : {callback}");
+			Debug.Log($"데이터 조회에 성공했습니다 : {callback}\n{callback.FlattenRows().Count}");
 
 			if (callback.FlattenRows().Count > 0)
 			{
+				// Debug.Log(callback.FlattenRows().Count);
 				rowInDate = callback.FlattenRows()[0]["inDate"].ToString();
+				
 			}
 			else
 			{

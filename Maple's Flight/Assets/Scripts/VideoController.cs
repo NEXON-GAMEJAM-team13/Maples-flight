@@ -14,7 +14,7 @@ public class VideoController : MonoBehaviour
     private void OnEnable()
     {
         Invoke("dest", 44f);
-        Debug.Log("����");
+        Debug.Log("Video playing");
     }
 
     public void dest()

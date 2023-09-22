@@ -3164,6 +3164,64 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &498329931
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 498329933}
+  - component: {fileID: 498329932}
+  - component: {fileID: 498329935}
+  m_Layer: 0
+  m_Name: LoginManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &498329932
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498329931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d89f440dcd5274b41b67c63365679617, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMessage: {fileID: 0}
+--- !u!4 &498329933
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498329931}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 90}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498329935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498329931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c1fb418114cce34591a4e197f89dbbe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMessage: {fileID: 0}
 --- !u!1 &521419154
 GameObject:
   m_ObjectHideFlags: 0
@@ -11857,7 +11915,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rankDataPrefab: {fileID: 8601074350919926354, guid: ce420a0be7660074cbc44629208d5ffa, type: 3}
-  scrollbar: {fileID: 0}
+  scrollbar: {fileID: 558568383}
   rankDataParent: {fileID: 586650023}
   myRankData: {fileID: 1258842698}
 --- !u!114 &1594402302
@@ -13152,11 +13210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: baae18eb68b5311498624a908b6a33f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMessage: {fileID: 926917023}
-  imageID: {fileID: 809695919}
-  inputFieldID: {fileID: 809695918}
-  btnRegister: {fileID: 75613473}
-  Main: {fileID: 38961463}
 --- !u!1 &1848022313
 GameObject:
   m_ObjectHideFlags: 0
