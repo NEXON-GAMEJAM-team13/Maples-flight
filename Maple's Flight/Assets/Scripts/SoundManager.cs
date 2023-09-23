@@ -1,31 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    private static SoundManager instance = null;
+    private static SoundManager instance;
 
-    public bool soundPlaying;
-
-
-
-    public static SoundManager Instance
-    {
-        get
-        {
-            if (null == instance)
-            {
-                return null;
+    AudioSource audiosource;
+    // [SerializeField]
+    // private GameObject settingPopup;
+    public static SoundManager Instance{
+        get{
+            if(instance == null){
+                instance = FindObjectOfType<SoundManager>();
             }
             return instance;
         }
     }
 
-    private void Awake()
-    {
-        soundPlaying = false;
+    private void Awake(){
+        if(Instance != this) Destroy(gameObject);
+       // settingPopup=GameObject.FindObjectsOfTypeAll("SettingPopup");
+        audiosource=GetComponent<AudioSource>();
     }
+
+
+    public void BGMOn(){
+        audiosource.loop=true;
+        audiosource.Play();
+    }   
+    public void BGMOff(){
+        audiosource.loop=false;
+        audiosource.Stop();
+    }
+
+
+    
+ 
 
 
 

@@ -6,8 +6,7 @@ public class VideoController : MonoBehaviour
 {
     [SerializeField]
     GameObject raw;
-    [SerializeField]
-    SoundManager soundManager;
+    
     [SerializeField]
     GameObject skipBtn;
 
@@ -15,6 +14,7 @@ public class VideoController : MonoBehaviour
     {
         Invoke("dest", 44f);
         Debug.Log("Video playing");
+        
     }
 
     public void dest()
@@ -23,8 +23,6 @@ public class VideoController : MonoBehaviour
         raw.SetActive(false);
         skipBtn.SetActive(false);
         Debug.Log("�����");
-
-        Debug.Log("SoundPlaying:" + soundManager.soundPlaying);
-        soundManager.soundPlaying = true;
+        SoundManager.Instance.BGMOn();
     }
 }
