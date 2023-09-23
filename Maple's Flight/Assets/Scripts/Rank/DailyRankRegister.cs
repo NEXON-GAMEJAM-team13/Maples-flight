@@ -28,7 +28,7 @@ public class DailyRankRegister : MonoBehaviour
 
 			if (callback.FlattenRows().Count > 0)
 			{
-				// Debug.Log(callback.FlattenRows().Count);
+				Debug.Log(callback.FlattenRows().Count);
 				rowInDate = callback.FlattenRows()[0]["inDate"].ToString();
 				
 			}

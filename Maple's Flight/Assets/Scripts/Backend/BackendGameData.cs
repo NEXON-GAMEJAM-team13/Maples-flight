@@ -46,7 +46,7 @@ public class BackendGameData : MonoBehaviour
             else
             {
                 // 실패
-                Debug.LogError("게임정보 저장 실패");
+                Debug.LogError(callback.GetMessage());
             }
         });
     }

@@ -6,10 +6,10 @@ using BackEnd;
 public class LoginManager : MonoBehaviour
 {
     void Awake(){
-        string ID="user321";
-        string PW="321";
+        string ID="user_3";
+        string PW="3";
         
-        try{CustomSignUp(ID, PW);}catch{}
+        CustomSignUp(ID, PW);
         ResponseToLogin(ID, PW);
 
     }
@@ -78,10 +78,10 @@ public class LoginManager : MonoBehaviour
 			// 로그인 성공
 			if ( callback.IsSuccess() )
 			{
-				Debug.Log($"{ID}님 환영합니다.");
+				Debug.Log($"로그인 성공. {ID}님 환영합니다.");
 
 				// Lobby 씬으로 이동
-				Utils.LoadScene(SceneNames.Lobby);
+				// Utils.LoadScene(SceneNames.Lobby);
 			}
 			// 로그인 실패
 			else
