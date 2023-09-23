@@ -12,9 +12,15 @@ public class Player : MonoBehaviour
     [SerializeField]
     Obstacles Obstacles;
 
+    [SerializeField]
+    AudioSource audioSource;
+
+    [SerializeField] 
+    AudioClip[] audioClip = new AudioClip[3];
     void Awake()
     {
         rigid2D = GetComponent<Rigidbody2D>();
+        audioSource=GetComponent<AudioSource>();
     }
 
     void OnEnable() 
@@ -67,12 +73,20 @@ public class Player : MonoBehaviour
     {
         rigid2D.velocity = Vector3.zero;
         rigid2D.AddForce(Vector3.up * 200);
+        if(SoundManager.Instance.sfxOn){
+          audioSource.clip=audioClip[0];
+          audioSource.Play();
+        }
     }
 
     public void FastBtn()
     {
         rigid2D.velocity = Vector3.zero;
         rigid2D.AddForce(Vector3.right * 80);
+        if(SoundManager.Instance.sfxOn){
+          audioSource.clip=audioClip[1];
+          audioSource.Play();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D collision)

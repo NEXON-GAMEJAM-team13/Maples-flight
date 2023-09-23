@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance;
 
     AudioSource audiosource;
+    public bool sfxOn;
     // [SerializeField]
     // private GameObject settingPopup;
     public static SoundManager Instance{
@@ -23,6 +24,7 @@ public class SoundManager : MonoBehaviour
         if(Instance != this) Destroy(gameObject);
        // settingPopup=GameObject.FindObjectsOfTypeAll("SettingPopup");
         audiosource=GetComponent<AudioSource>();
+        sfxOn=true;
     }
 
 
@@ -34,7 +36,10 @@ public class SoundManager : MonoBehaviour
         audiosource.loop=false;
         audiosource.Stop();
     }
+    
+    
 
+    
 
     
  

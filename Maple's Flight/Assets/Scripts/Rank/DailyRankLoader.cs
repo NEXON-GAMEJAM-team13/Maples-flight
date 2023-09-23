@@ -83,7 +83,7 @@ public class DailyRankLoader : MonoBehaviour
 							//rankDataList[i].Nickname = UserInfo.Data.gamerId;
 													   
 
-							Debug.Log(rankDataJson[i]["nickname"]?.ToString());
+							// Debug.Log(rankDataJson[i]["nickname"]?.ToString());
 						}
 						// 만약 limitCount에 설정된 숫자보다 현재 랭킹에 등록된 숫자가 적으면 나머지는 빈 값으로 설정
 						for (int i = rankerCount; i < Constants.MAX_RANK_LIST; ++i)

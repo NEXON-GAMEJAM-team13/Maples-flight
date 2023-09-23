@@ -37,6 +37,7 @@ public class ToggleButton : MonoBehaviour
             togglePos = 99.32f; // 토글 위치 지정
             statusImage[val].sprite = off;
             if(val == 0) SoundManager.Instance.BGMOff();
+            else SoundManager.Instance.sfxOn=false;
          
             // 볼륨 조절 메소드 삽입 필요
         }
@@ -46,6 +47,7 @@ public class ToggleButton : MonoBehaviour
             togglePos = 189.7f;
             statusImage[val].sprite = on;
             if(val == 0) SoundManager.Instance.BGMOn();
+            else SoundManager.Instance.sfxOn=true;
             // 볼륨 조절 메소드 삽입 필요
         }
 
