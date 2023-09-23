@@ -6,6 +6,7 @@ using BackEnd;
 
 public class Login : LoginBase
 {
+	
 	// [SerializeField]
 	// private	Image				imageID;			// ID 필드 색상 변경
 	// [SerializeField]
@@ -44,6 +45,8 @@ public class Login : LoginBase
 	/// <summary>
 	/// 로그인 시도 후 서버로부터 전달받은 message를 기반으로 로직 처리
 	/// </summary>
+	
+	
 	public void ResponseToLogin(string ID, string PW)
 	{
 		// 서버에 로그인 요청

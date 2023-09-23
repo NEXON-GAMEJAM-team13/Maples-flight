@@ -3059,6 +3059,7 @@ GameObject:
   m_Component:
   - component: {fileID: 468888278}
   - component: {fileID: 468888277}
+  - component: {fileID: 468888279}
   m_Layer: 0
   m_Name: RankManager
   m_TagString: Untagged
@@ -3092,6 +3093,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &468888279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468888276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79681297ee2699b47b2ec647b68ccba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onUserInfoEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &472690132 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7214147704504396019, guid: f63ec70d118b32141b6e350cdb490dcd, type: 3}
@@ -3221,7 +3237,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c1fb418114cce34591a4e197f89dbbe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textMessage: {fileID: 0}
+  user: {fileID: 468888279}
 --- !u!1 &521419154
 GameObject:
   m_ObjectHideFlags: 0

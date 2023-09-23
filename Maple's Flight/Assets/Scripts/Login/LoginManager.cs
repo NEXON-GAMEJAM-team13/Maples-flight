@@ -5,13 +5,17 @@ using BackEnd;
 
 public class LoginManager : MonoBehaviour
 {
+    [SerializeField]
+    private UserInfo user;
+
     void Awake(){
-        string ID="user_3";
-        string PW="3";
-        
+        string ID="user_111";
+        string PW="1111";
+        string NickName="user_111";
         CustomSignUp(ID, PW);
         ResponseToLogin(ID, PW);
-
+        UpdateNickname(NickName);
+        user.GetUserInfoFromBackend();
     }
     // Start is called before the first frame update
    
@@ -133,5 +137,45 @@ public class LoginManager : MonoBehaviour
 
 			yield return null;
 		}
+	}
+
+    
+	private void UpdateNickname(string nickname)
+	{
+		// 닉네임 설정
+		Backend.BMember.UpdateNickname(nickname, callback =>
+		{
+			// "닉네임 변경" 버튼의 상호작용 활성화
+			
+
+			// 닉네임 변경 성공
+			if ( callback.IsSuccess() )
+			{
+				Debug.Log($"{nickname}(으)로 닉네임이 변경되었습니다.");
+
+				// 닉네임 변경에 성공했을 때 onNicknameEvent에 등록되어 있는 이벤트 메소드 호출
+				// onNicknameEvent?.Invoke();
+			}
+			// 닉네임 변경 실패
+			else
+			{
+				string message = string.Empty;
+
+				switch ( int.Parse(callback.GetStatusCode()) )
+				{
+					case 400:	// 빈 닉네임 혹은 string.Empty, 20자 이상의 닉네임, 닉네임 앞/뒤에 공백이 있는 경우
+						message = "닉네임이 비어있거나 | 20자 이상 이거나 | 앞/뒤에 공백이 있습니다.";
+						break;
+					case 409:	// 이미 중복된 닉네임이 있는 경우
+						message = "이미 존재하는 닉네임입니다.";
+						break;
+					default:
+						message = callback.GetMessage();
+						break;
+				}
+
+				Debug.Log(message);
+			}
+		});
 	}
 }

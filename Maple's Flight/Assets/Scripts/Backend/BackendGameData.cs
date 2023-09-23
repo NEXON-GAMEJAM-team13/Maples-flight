@@ -67,19 +67,36 @@ public class BackendGameData : MonoBehaviour
 
 
 //뒤끝콘솔 테이블에서 유저 정보를 불러올 때 호출
-    // public void GameDataLoad(){
-    //     Backend.GameData.GetMyData(Constants.USER_DATA_TABLE, new Where(), callback =>{
+    public void GameDataLoad(){
+        Backend.GameData.GetMyData(Constants.USER_DATA_TABLE, new Where(), callback =>{
 
-    //         //게임 정보 불러오기에 성공했을 때
-    //         if(callback.IsSuccess()){
-    //             Debug.Log($"게임데이터 불러오기 성공 :{callback}");
+            //게임 정보 불러오기에 성공했을 때
+            if(callback.IsSuccess()){
+                Debug.Log($"게임데이터 불러오기 성공 :{callback}");
 
-    //             try{
+                try{
+                    LitJson.JsonData gameDataJson = callback.FlattenRows();
                     
-    //             }
+                    if(gameDataJson.Count<=0){
+                        Debug.LogWarning("데이터 없음");
+                    }
+                    else{
+                        //불러온 게임 정보의 고유값
+                        gameDataRowInDate = gameDataJson[0]["inDate"].ToString();
+                        
+                        onGameDataLoadEvent?.Invoke();
+                    }
+                }
+                catch(System.Exception e){
+                    gameData.Reset();
+                    Debug.LogError(e);
+                }
             
-    //         }
-    //     });
+            }
+            else{
+                Debug.LogError($"게임정보 데이터 불러오기에 실패 : {callback}");
+            }
+        });
 
-    // }
+    }
 }
