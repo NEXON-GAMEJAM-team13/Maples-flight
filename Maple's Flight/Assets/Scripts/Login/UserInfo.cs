@@ -48,6 +48,7 @@ public class UserInfo : MonoBehaviour
 				// 유저 정보를 기본 상태로 설정
 				// Tip. 일반적으로 오프라인 상태를 대비해 기본적인 정보를 저장해두고 오프라인일 때 불러와서 사용
 				data.Reset();
+				Debug.Log("USERINFO불러오기 실패");
 				Debug.LogError(callback.GetMessage());
 			}
 

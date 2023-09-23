@@ -75,8 +75,14 @@ public class DailyRankLoader : MonoBehaviour
 
 							// 닉네임은 별도로 설정하지 않은 유저도 존재할 수 있기 때문에
 							// 닉네임이 존재하지 않는 유저는 닉네임 대신 gamerId를 출력
-							rankDataList[i].Nickname = rankDataJson[i].ContainsKey("nickname") == true ?
-													   rankDataJson[i]["nickname"]?.ToString() : UserInfo.Data.gamerId;
+							// rankDataList[i].Nickname = rankDataJson[i].ContainsKey("nickname") == true ?
+							// 						   rankDataJson[i]["nickname"]?.ToString() : UserInfo.Data.gamerId;
+
+							
+							rankDataList[i].Nickname = UserInfo.Data.gamerId;
+													   
+
+							Debug.Log(UserInfo.Data.gamerId);
 						}
 						// 만약 limitCount에 설정된 숫자보다 현재 랭킹에 등록된 숫자가 적으면 나머지는 빈 값으로 설정
 						for (int i = rankerCount; i < Constants.MAX_RANK_LIST; ++i)

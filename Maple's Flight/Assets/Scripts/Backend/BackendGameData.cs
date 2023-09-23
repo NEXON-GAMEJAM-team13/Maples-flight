@@ -64,4 +64,22 @@ public class BackendGameData : MonoBehaviour
         if (string.IsNullOrEmpty(gameDataRowInDate))
             Debug.Log("에러");
     }
+
+
+//뒤끝콘솔 테이블에서 유저 정보를 불러올 때 호출
+    // public void GameDataLoad(){
+    //     Backend.GameData.GetMyData(Constants.USER_DATA_TABLE, new Where(), callback =>{
+
+    //         //게임 정보 불러오기에 성공했을 때
+    //         if(callback.IsSuccess()){
+    //             Debug.Log($"게임데이터 불러오기 성공 :{callback}");
+
+    //             try{
+                    
+    //             }
+            
+    //         }
+    //     });
+
+    // }
 }
