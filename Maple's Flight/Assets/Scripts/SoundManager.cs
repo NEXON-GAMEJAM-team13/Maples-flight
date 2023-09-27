@@ -30,36 +30,27 @@ public class SoundManager : MonoBehaviour
 
     private void Awake(){
         if(Instance != this) Destroy(gameObject);
-       // settingPopup=GameObject.FindObjectsOfTypeAll("SettingPopup");
         audiosource=GetComponent<AudioSource>();
         audiosource.loop=true;
         bgmOn=false;
         sfxOn=true;
-        UpdateBGMBtns(bgmOn);
-        UpdateSFXBtns(sfxOn);
+        UpdateBtns(bgmToggle, bgmOn);
+        UpdateBtns(sfxToggle, sfxOn);
+
     }
 
 
 
-    public void UpdateBGMBtns(bool isActive){
-        float togglePos=0;
-        for(int i=0; i<2; i++){
-            if(isActive) togglePos=190;
-            else togglePos=100;
-        bgmToggle[i].transform.localPosition 
-        = new Vector3(togglePos, bgmToggle[i].transform.localPosition.y, bgmToggle[i].transform.localPosition.z); 
+    public void UpdateBtns(GameObject[] btns, bool isActive){
+        for(int i=0;i<2;i++){
+            float togglePosX=btns[i].transform.localPosition.x;
+            if(isActive) togglePosX=190;
+            else togglePosX=90;
+             btns[i].transform.localPosition 
+        = new Vector3(togglePosX, btns[i].transform.localPosition.y, btns[i].transform.localPosition.z); 
         }
     }
 
-    public void UpdateSFXBtns(bool isActive){
-        float togglePos=0;
-        for(int i=0; i<2; i++){
-            if(isActive) togglePos=190;
-            else togglePos=100;
-        sfxToggle[i].transform.localPosition 
-        = new Vector3(togglePos, sfxToggle[i].transform.localPosition.y, sfxToggle[i].transform.localPosition.z); 
-        }
-    }
 
 
     public void BGMClicked(){
@@ -71,7 +62,7 @@ public class SoundManager : MonoBehaviour
             bgmOn=true;
             audiosource.Play();
         }
-        UpdateBGMBtns(bgmOn);
+        UpdateBtns(bgmToggle, bgmOn);
 
     }
 
@@ -82,7 +73,7 @@ public class SoundManager : MonoBehaviour
         else{
             sfxOn=true;
         }
-        UpdateSFXBtns(sfxOn);
+        UpdateBtns(sfxToggle, sfxOn);
     }
     
  
