@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
         if(SoundManager.Instance.sfxOn){
           audioSource.clip=audioClip[0];
           audioSource.Play();
+          Debug.Log("UpBtnSound");
         }
     }
 
@@ -86,6 +87,7 @@ public class Player : MonoBehaviour
         if(SoundManager.Instance.sfxOn){
           audioSource.clip=audioClip[1];
           audioSource.Play();
+          Debug.Log("FastBtnSound");
         }
     }
 

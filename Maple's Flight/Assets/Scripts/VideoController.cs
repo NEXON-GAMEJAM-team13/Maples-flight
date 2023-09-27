@@ -23,6 +23,6 @@ public class VideoController : MonoBehaviour
         raw.SetActive(false);
         skipBtn.SetActive(false);
         Debug.Log("�����");
-        SoundManager.Instance.BGMOn();
+        SoundManager.Instance.BGMClicked();
     }
 }
