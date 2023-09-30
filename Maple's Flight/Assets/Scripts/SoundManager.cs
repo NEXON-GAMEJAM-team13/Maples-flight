@@ -18,6 +18,16 @@ public class SoundManager : MonoBehaviour
     [SerializeField]
     GameObject[] sfxToggle= new GameObject[2];
 
+    [SerializeField]
+    Sprite OnSprite;
+
+    [SerializeField] 
+    Sprite OffSprite;
+    [SerializeField]
+    GameObject[] sfxIcon= new GameObject[2];
+
+    [SerializeField]
+    GameObject[] bgmIcon= new GameObject[2];
 
     public static SoundManager Instance{
         get{
@@ -35,23 +45,30 @@ public class SoundManager : MonoBehaviour
         bgmOn=false;
         sfxOn=true;
         UpdateBtns(bgmToggle, bgmOn);
+        UpdateIcons(bgmIcon, bgmOn);
         UpdateBtns(sfxToggle, sfxOn);
+        UpdateIcons(sfxIcon, sfxOn);
 
     }
-
 
 
     public void UpdateBtns(GameObject[] btns, bool isActive){
         for(int i=0;i<2;i++){
             float togglePosX=btns[i].transform.localPosition.x;
             if(isActive) togglePosX=190;
-            else togglePosX=90;
+            else togglePosX=99;
              btns[i].transform.localPosition 
         = new Vector3(togglePosX, btns[i].transform.localPosition.y, btns[i].transform.localPosition.z); 
         }
     }
 
+    public void UpdateIcons(GameObject[] Icons, bool isActive){
+        for(int i=0;i<2;i++){
+            if(isActive) Icons[i].GetComponent<Image>().sprite=OnSprite;
+            else Icons[i].GetComponent<Image>().sprite=OffSprite;
 
+        }
+    }
 
     public void BGMClicked(){
         if(bgmOn){
@@ -63,6 +80,7 @@ public class SoundManager : MonoBehaviour
             audiosource.Play();
         }
         UpdateBtns(bgmToggle, bgmOn);
+        UpdateIcons(bgmIcon, bgmOn);
 
     }
 
@@ -74,6 +92,7 @@ public class SoundManager : MonoBehaviour
             sfxOn=true;
         }
         UpdateBtns(sfxToggle, sfxOn);
+        UpdateIcons(sfxIcon, sfxOn);
     }
     
  
