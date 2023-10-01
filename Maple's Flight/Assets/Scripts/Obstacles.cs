@@ -166,7 +166,14 @@ public class Obstacles : MonoBehaviour
                 Destroy(animals);
             }
         }
-        
+    }
+
+    public void DestroyObstacles()
+    {
+        foreach (Transform child in obsParent)
+        {
+            Destroy(child.gameObject);
+        }
     }
 
     int GetYPos(int obsIdx)
